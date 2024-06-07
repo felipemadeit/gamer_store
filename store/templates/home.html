@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}
+    Home
+{% endblock %}
+{% block body %}
+    <div class="slogan-div">
+        <img class="slogan-img" src="{% static 'media/slogan_.png' %}">
+    </div>
+    <div class="container-cards">
+        <div class="product-card">
+            <a href="{% url 'components' %}"><img class="products-img" src="{% static 'media/compnts.png' %}"></a>
+            <a href="{% url 'components' %}"><img class="components-img" src="{% static 'media/components-txt.png' %}"></a>
+            
+
+        </div>
+        <div class="product-card"></div>
+        <div class="product-card"></div>
+    </div>
+{% endblock %}

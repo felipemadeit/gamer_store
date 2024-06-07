@@ -1,0 +1,28 @@
+{% load static %}
+
+<header>
+    <nav class="nav-bar">
+    <a href="{% url 'home' %}" alt="" class="logo">
+        <img class="logo-nav" src ="{% static 'media/logo-nav.png' %}" alt="logo navbar">
+    </a>
+
+    <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    <!--    
+    <div class="search">
+        <div class="btn-search">
+            <i class="fas fa-search"></i>
+        </div> 
+        <input type="text" placeholder="Search" requiered>
+    </div>
+    -->
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'components' %}">Components</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Log in</a></li>
+        </ul>
+    </nav>
+    
+</header>
