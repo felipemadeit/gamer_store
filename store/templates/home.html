@@ -7,16 +7,43 @@
 {% endblock %}
 {% block body %}
     <div class="slogan-div">
-        <img class="slogan-img" src="{% static 'media/slogan_.png' %}">
+        <img class="slogan-img" src="{% static 'media/letras.png' %}">
     </div>
     <div class="container-cards">
         <div class="product-card">
-            <a href="{% url 'components' %}"><img class="products-img" src="{% static 'media/compnts.png' %}"></a>
-            <a href="{% url 'components' %}"><img class="components-img" src="{% static 'media/components-txt.png' %}"></a>
-            
-
+            <a href="{% url 'components' %}"><img class="products-img" src="{% static 'media/compnts.png' %}"></a>            
         </div>
-        <div class="product-card"></div>
-        <div class="product-card"></div>
+        <span class="components-span">Components</span>
+        <div class="product-card">
+            <a href="{% url 'prebuilds' %}"><img class="prebuild-img" src="{% static 'media/prebuild.png' %}"></a>
+        </div>
+        <span class="prebuild-span">Prebuilds</span>
+        <div class="product-card">
+            <a href="{% url 'laptops' %}"><img class="laptops-img" src="{% static 'media/alp.png' %}"></a>
+        </div>
+        <span class="laptop-span">Laptops</span>
+    </div>
+    <div class="offers">
+        <div class="card">
+            <a href=""><img class="laptop-img-offer" src="{% static 'media/laptopoffer.png' %}"></a>
+            <a href=""><img class="laptop-img-text" src="{% static 'media/offlaptops.png' %}"></a>
+        </div>
+        <div class="card">
+            <a href=""><img class="chasis-img-offer" src="{% static 'media/thermal.png' %}"></a>
+            <a href=""><img class="chasis-img-text" src="{% static 'media/componentsoffers.png' %}"></a>   
+        </div>
+        <div class="card">
+            <a href=""><img class="card-img-offer" src="{% static 'media/card.png' %}"></a>
+            <a href=""><img class="card-img-text" src="{% static 'media/cardsoffer.png' %}"></a>            
+        </div>
+       
+    <div class="container-button-offers">
+        <a href="#" class="button-offers"> Explore all our offers</a>
+    </div>    
+    </div>
+
+    <div class="footer">
+        <div class="social-links"></div>
+        <div class="container-creator">Created by FelipeMadeIt</div>
     </div>
 {% endblock %}

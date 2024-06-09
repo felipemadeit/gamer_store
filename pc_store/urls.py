@@ -21,6 +21,10 @@ from store import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_view, name='home'),
-    path('components', views.components_view, name='components')
+    path('components', views.components_view, name='components'),
+    path('prebuilds', views.prebuilds_view, name='prebuilds'),
+    path('laptops', views.laptops_view, name='laptops'),
+    path('login', views.login_view, name='login')
+
 
 ]
