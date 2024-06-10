@@ -21,7 +21,11 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'components' %}">Components</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="{% url 'login' %}">Log in</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="#">Log Out</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Log in</a></li>
+            {% endif %}
         </ul>
     </nav>
     

@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    Sign Up
+{% endblock %}
+
+{% block body %}
+    <div class="sign_up_form">
+        <div class="error-sign_up">
+            {{error}}
+        </div>
+        <form method='POST'>
+            {% csrf_token %}
+            <div class="label-username_login">
+                {{form.username}}
+            </div>
+            <div class="label-password1">
+                {{form.password1}}
+            </div>
+            <div class="label-password2">
+                {{form.password2}}
+            </div>
+            <button>
+                Create Account
+            </button>
+        </form>
+    </div>
+{% endblock %}

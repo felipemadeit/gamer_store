@@ -1,1 +1,26 @@
 {% include 'index.html' %}
+
+{% block body %}
+    <div class="container-form-login">
+        <div class="error-login">
+            {{error}}
+        </div>
+        <form action ='' method='POST'>
+            {% csrf_token %}
+            <div class="form-username_login">
+                {{form.username.label_tag}}
+                {{form.username}}
+            </div>
+            <div class="form-password">
+                {{form.password.label_tag}}
+                {{form.password}}
+            </div>
+            <button class="btn-login">
+                Log in 
+            </button>
+            <div class="to-sign">
+                <a href="{% url 'sign_up' %}">Create an Account</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

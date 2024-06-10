@@ -75,6 +75,16 @@ WSGI_APPLICATION = 'pc_store.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'project_db',
+        'USER': 'julian',
+        'PASSWORD': 'IdeaTab2005@',
+        'HOST': 'localhost',
+        'PORT': '3306'
+    }
+}
 
 
 # Password validation

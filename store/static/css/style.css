@@ -270,7 +270,7 @@ a {
 }
 
 .card:hover {
-    background-color: #0d1b2a;
+    background-color: #90a2b6;
 }
 
 
@@ -368,7 +368,7 @@ a {
 }
 
 .button-offers:hover {
-    background-color: #182c42;
+    background-color: #90a2b6;
 }
 
 .footer {
@@ -385,4 +385,134 @@ a {
     font-size: 20px;
     margin-top: 40px;
     margin-left: 200px;
+}
+
+.container-form-login {
+    display: flex;
+    width: 400px;
+    height: 400px;
+    margin-top: 70px;
+    margin-left: 480px;
+    background-color: #2b2d42;
+    border: 3px solid ;
+    border-radius: 5px;
+}
+
+.error-login {
+    position: absolute;
+    margin-top: 250px;
+    margin-left: 100px;
+    width: 250px;
+    height: 40px;
+    
+}
+
+.btn-login  {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    margin-top: 70px;
+    margin-left: 175px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+
+}
+
+
+.form-username_login {
+    margin-top: 40px;
+    margin-left: 10px;
+}
+
+.form-password {
+    margin-top: 40px;
+    margin-left: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 70px;
+    color: white;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 70px;
+}
+
+
+.to-sign {
+    position: absolute;
+    display: flex;
+    width: 140px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 130px;
+    margin-top: 120px;
+}
+
+.to-sign a  {
+    text-decoration: none;
+    color: white;
+}
+
+/* Estilos para el formulario de registro */
+.sign_up_form {
+    display: flex;
+    width: 800px;
+    height: 400px;
+    margin-top: 70px;
+    margin-left: 480px;
+    background-color: #2b2d42;
+    border: 3px solid ;
+    border-radius: 5px;
+}
+
+.error-sign_up {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 10px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-signup {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-signup:hover {
+    background-color: #0056b3;
 }
