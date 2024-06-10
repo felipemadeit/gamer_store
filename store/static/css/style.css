@@ -398,21 +398,12 @@ a {
     border-radius: 5px;
 }
 
-.error-login {
-    position: absolute;
-    margin-top: 250px;
-    margin-left: 100px;
-    width: 250px;
-    height: 40px;
-    
-}
-
 .btn-login  {
     position: absolute;
-    width: 50px;
-    height: 20px;
-    margin-top: 70px;
-    margin-left: 175px;
+    width: 70px;
+    height: 30px;
+    margin-top: 120px;
+    margin-left: 160px;
     background-color: transparent;
     border: 2px solid black;
     border-radius: 4px;
@@ -425,9 +416,20 @@ a {
 }
 
 
+
+
 .form-username_login {
     margin-top: 40px;
     margin-left: 10px;
+}
+
+.error-login {
+    display: flex;
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    margin-top: 220px;
+    margin-left: 100px;
 }
 
 .form-password {
@@ -451,68 +453,96 @@ input[type="password"] {
     margin-left: 70px;
 }
 
-
-.to-sign {
-    position: absolute;
-    display: flex;
-    width: 140px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    margin-left: 130px;
-    margin-top: 120px;
-}
-
-.to-sign a  {
-    text-decoration: none;
-    color: white;
-}
-
-/* Estilos para el formulario de registro */
-.sign_up_form {
+.container_sign_up_form {
     display: flex;
     width: 800px;
     height: 400px;
     margin-top: 70px;
-    margin-left: 480px;
+    margin-left: 278px;
     background-color: #2b2d42;
     border: 3px solid ;
     border-radius: 5px;
 }
 
 .error-sign_up {
-    color: red;
-    margin-bottom: 10px;
+    position: absolute;
+    margin-top: 270px;
+    margin-left: 320px;
+    width: 250px;
+    height: 40px;
 }
 
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: calc(100% - 10px);
-    padding: 10px;
-    border: 1px solid #ccc;
+.btn-create  {
+    position: absolute;
+    width: 180px;
+    height: 50px;
+    margin-top: 320px;
+    margin-left: 300px;
+    background-color: transparent;
+    border: 2px solid black;
     border-radius: 4px;
-}
-
-.btn-signup {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.btn-signup:hover {
-    background-color: #0056b3;
+
+.label-username_login {
+    position: absolute;
+    display: flex;
+    margin-top: 40px;
+    margin-left: 120px;
+    gap: 75px;
+}
+.label-username_login input {
+    width: 200px;
+}
+
+.label-password1 {
+    display: flex;
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 120px;
+    gap: 80px;
+}
+
+.label-password1 input {
+    width: 200px;
+}
+
+.label-password2 {
+    display: flex;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 120px;
+}
+
+.label-password2 input {
+    width: 200px;
+}
+
+
+.to-sign {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+    margin-top: 45px;
+    margin-left: 100px;
+}
+
+.to-sign a {
+    color: white;
+}
+
+.line {
+    display: flex;
+    width: 3px;
+    height: 60px;
+    margin-top: 20px;
+    margin-left: 500px;
+    background-color: black;
 }

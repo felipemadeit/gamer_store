@@ -25,7 +25,8 @@ urlpatterns = [
     path('prebuilds', views.prebuilds_view, name='prebuilds'),
     path('laptops', views.laptops_view, name='laptops'),
     path('login', views.login_view, name='login'),
-    path('sign_up', views.sign_up_view, name='sign_up')
+    path('sign_up', views.sign_up_view, name='sign_up'),
+    path('log_out', views.sign_out, name='logout')
 
 
 ]

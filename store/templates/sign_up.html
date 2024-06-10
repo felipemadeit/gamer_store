@@ -5,22 +5,25 @@
 {% endblock %}
 
 {% block body %}
-    <div class="sign_up_form">
+    <div class="container_sign_up_form">
         <div class="error-sign_up">
             {{error}}
         </div>
         <form method='POST'>
             {% csrf_token %}
             <div class="label-username_login">
+                {{form.username.label_tag}}
                 {{form.username}}
             </div>
             <div class="label-password1">
+                {{form.password1.label_tag}}
                 {{form.password1}}
             </div>
             <div class="label-password2">
+                {{form.password2.label_tag}}
                 {{form.password2}}
             </div>
-            <button>
+            <button class="btn-create">
                 Create Account
             </button>
         </form>

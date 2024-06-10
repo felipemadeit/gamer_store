@@ -34,7 +34,7 @@ def login_view (request):
         else:
             login(request, user)
             return redirect('home')
-        
+
 def sign_up_view (request):
     
     if request.method == 'GET':
@@ -65,4 +65,8 @@ def sign_up_view (request):
                 'form': UserCreationForm,
                 'error': 'Passwords do Not Match'
             })
+
+def sign_out (request):
+    logout(request)
+    return redirect('home')
 
