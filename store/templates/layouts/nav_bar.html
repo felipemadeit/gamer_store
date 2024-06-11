@@ -23,6 +23,7 @@
             <li><a href="#">Contact</a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'logout' %}">Log Out</a></li>
+                <li><i class="fas fa-shopping-cart shopping-cart-icon"></i></a>
             {% else %}
                 <li><a href="{% url 'login' %}">Log in</a></li>
             {% endif %}

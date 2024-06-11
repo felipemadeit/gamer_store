@@ -385,6 +385,7 @@ a {
     font-size: 20px;
     margin-top: 40px;
     margin-left: 200px;
+    color: white;
 }
 
 .container-form-login {
@@ -544,5 +545,10 @@ input[type="password"] {
     height: 60px;
     margin-top: 20px;
     margin-left: 500px;
-    background-color: black;
+    background-color: white;    
 }
+
+.shopping-cart-icon {
+    margin-top: 5px;
+    color: white; 
+  }
