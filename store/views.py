@@ -4,10 +4,15 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.forms import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
+from .models import Products
 
 # Home view
 def home_view (request):
-    return render(request, 'home.html')
+
+    products = Products.objects.all()
+    return render(request, 'home.html', {
+        'products': products 
+    })
 
 def components_view (request):
     return render(request, 'components.html')

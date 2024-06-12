@@ -42,6 +42,18 @@
     </div>    
     </div>
 
+    <div class ="show_products">
+        {% for product in products %}
+            <a href="#">
+                <div class="card_product">
+                    <h2>{{product.product_name}}</h2>
+                    <img src="{{product.product_img.url}}">
+                    <p>{{product.get_format_price}}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
     <div class="footer">
         <div class="social-links"></div>
         <div class="container-creator">Created by FelipeMadeIt</div>

@@ -265,13 +265,9 @@ a {
     border: 3px solid rgb(0, 0, 0);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-    transition: background-color 0.3s;
     height: 400px;
 }
 
-.card:hover {
-    background-color: #90a2b6;
-}
 
 
 
@@ -552,3 +548,50 @@ input[type="password"] {
     margin-top: 5px;
     color: white; 
   }
+
+.show_products {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr)); 
+    margin-top: 200px;
+    margin-left: 65px;
+    width: 1200px;
+    height: 300px;
+    gap: 15px;
+}
+
+.card_product {
+    display: flex;
+    width: 235px;
+    height: 300px;
+    border: 1px solid rgb(92, 92, 92);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+.card_product img {
+    position: absolute;
+    height: auto;
+    margin-top: 40px;
+    margin-left: 70px;
+    transform: scale(1.5);
+}
+
+.card_product  h2{
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 190px;
+    margin-left: 14px;
+
+}
+
+.card_product p {
+    position: absolute;
+    color: black;
+    margin-top: 250px;
+    margin-left: 14px;
+}
+
+.card_product img {
+    width: 100px;
+    height: auto;
+}
