@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}
+    {{product.product_name}}
+{% endblock %}
+
+{% block body %}
+
+   
+
+    <div class="container-img-product">
+        <img src="{{product.product_img.url}}" alt="{{product.product_name}}">
+    </div>
+
+    <div class="product-name">
+        <h1>{{product.product_name}}</h1>
+    </div>
+
+    <div class="container-info">
+            {% if product.product_stock > 0 %}
+                <span style="color: green;"> &#x2713; Stock</span> 
+            {% elif product.product_stock <= 0 %}
+                <span style="color: red;"> &#x0058; Stock</span>
+            {% endif %}
+            <span>Free Shipping</span>
+            <span>One year Warranty</span>
+    </div>
+
+    <div class="container-product-description">
+        <p>{{product.product_description}}</p>
+    </div>
+
+    <div class="quantity-selector">
+        <input type="number" class="quantity-input" value="1" min="1">
+    </div>
+
+{% endblock %}

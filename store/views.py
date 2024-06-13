@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.forms import User
@@ -9,10 +9,26 @@ from .models import Products
 # Home view
 def home_view (request):
 
-    products = Products.objects.all()
+    # SQL Query for the Processors
+    products_processor = Products.objects.filter(product_category = 'Processor')
+
+    # SQL Query for the Graphics cards
+    products_cards = Products.objects.filter(product_category = 'Graphics card')
+
+    # SQL Query for the Laptops
+    products_laptops = Products.objects.filter(product_category = 'Laptops')
+
+    # SQL Query for the Keyboards
+    products_keyboards = Products.objects.filter(product_category = 'Keyboards')
+
     return render(request, 'home.html', {
-        'products': products 
+        'processors': products_processor,
+        'cards': products_cards,
+        'laptops': products_laptops,
+        'keyboards': products_keyboards
     })
+
+    
 
 def components_view (request):
     return render(request, 'components.html')
@@ -75,3 +91,9 @@ def sign_out (request):
     logout(request)
     return redirect('home')
 
+
+def product_view(request, product_id):
+    product = get_object_or_404(Products, product_id=product_id)
+    return render(request, 'product.html',  {
+        'product': product
+    })

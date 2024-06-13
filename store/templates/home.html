@@ -43,16 +43,76 @@
     </div>
 
     <div class ="show_products">
-        {% for product in products %}
-            <a href="#">
-                <div class="card_product">
-                    <h2>{{product.product_name}}</h2>
-                    <img src="{{product.product_img.url}}">
-                    <p>{{product.get_format_price}}</p>
-                </div>
-            </a>
+        <div class="text-processors">
+            <h2>BEST SELLING PROCESSORS</h2>
+        </div>
+        {% for product in processors|slice:":5" %}
+                    <a href="{% url 'product' product.product_id %}">
+                        <div class="card_product">
+                            <h2>{{product.product_name}}</h2>
+                            <img src="{{product.product_img.url}}">
+                            <p>{{product.get_format_price}}</p>
+                        </div>
+                    </a>
         {% endfor %}
     </div>
+
+    <div class="line-separator"></div>
+
+    <div class="top-selling-cards">
+        <div class="text-cards">
+            <h2>BEST SELLING GRAPHICS CARDS</h2>
+        </div>
+            {% for product in cards|slice:":5" %}
+                    <a href="{% url 'product' product.product_id %}">
+                        <div class="card_product">
+                            <h2>{{product.product_name}}</h2>
+                            <img src="{{product.product_img.url}}">
+                        <p>{{product.get_format_price}}</p>
+                        </div>
+                    </a>
+            {% endfor %}
+    </div>
+
+    <div class="line-separator"></div>
+
+    <div class="top-selling-laptops">
+        <div class="text-laptops">
+            <h2>BEST SELLING LAPTOPS</h2>
+        </div>
+        {% for product in laptops|slice:":5" %}
+                <a href="{% url 'product' product.product_id %}">
+                    <div class="card_product">
+                        <h2>{{product.product_name}}</h2>
+                        <img src="{{product.product_img.url}}">
+                        <p>{{product.get_format_price}}</p>
+                    </div>
+                </a>
+        {% endfor %}
+    </div>
+
+    <div class="line-separator"></div>      
+
+    <div class="top-selling-keyboards">
+        <div class="text-keyboards">
+            <h2>BEST SELLING KEYBOARDS</h2>
+        </div>
+        {% for product in keyboards|slice:":5" %}
+                <a href="{% url 'product' product.product_id %}">
+                    <div class="card_product">
+                        <h2>{{product.product_name}}</h2>
+                        <img src="{{product.product_img.url}}">
+                        <p>{{product.get_format_price}}</p>
+                    </div>
+                </a>
+        {% endfor %}
+    </div>
+
+    <!--<div class="pre_builds">
+        <img src="{% static 'media/img-expert.png' %}">
+        <div class="container-h1"><h1>Stressed out by not<br>knowing what<br>components to use?</h1></div>
+        <a href="#" class="button-prebuilds "></a>
+    </div>-->   
 
     <div class="footer">
         <div class="social-links"></div>

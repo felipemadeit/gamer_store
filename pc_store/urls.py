@@ -28,7 +28,8 @@ urlpatterns = [
     path('laptops', views.laptops_view, name='laptops'),
     path('login', views.login_view, name='login'),
     path('sign_up', views.sign_up_view, name='sign_up'),
-    path('log_out', views.sign_out, name='logout')
+    path('log_out', views.sign_out, name='logout'),
+    path('product/<int:product_id>/', views.product_view, name='product')
 
 
 ]

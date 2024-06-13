@@ -15,6 +15,7 @@ class Products (models.Model):
     product_img = models.ImageField(upload_to= 'store/static/media/products')
     product_category = models.CharField(max_length=200, default='General')
     product_brand = models.CharField(max_length=200, default='general')
+    product_stock = models.PositiveSmallIntegerField(default=100)
 
 
     def get_format_price(self):

@@ -252,7 +252,7 @@ a {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr)); 
     gap: 5px;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-left: 50px;
     width: 1240px;
     height: 450px;
@@ -370,7 +370,7 @@ a {
 .footer {
     display: flex;
     width: 100%;
-    margin-top: 500px;
+    margin-top: 200px;
     height: 100px;
     background-color: #2b2d42;
     
@@ -553,16 +553,17 @@ input[type="password"] {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr)); 
     margin-top: 200px;
-    margin-left: 65px;
-    width: 1200px;
-    height: 300px;
-    gap: 15px;
+    margin-left: 60px;
+    width: 1230px;
+    height: 400px;
+    gap: 10px;
 }
 
 .card_product {
     display: flex;
-    width: 235px;
+    width: 240px;
     height: 300px;
+    margin-top: 80px;
     border: 1px solid rgb(92, 92, 92);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -570,7 +571,7 @@ input[type="password"] {
     position: absolute;
     height: auto;
     margin-top: 40px;
-    margin-left: 70px;
+    margin-left: 65px;
     transform: scale(1.5);
 }
 
@@ -587,11 +588,186 @@ input[type="password"] {
 .card_product p {
     position: absolute;
     color: black;
-    margin-top: 250px;
+    margin-top: 255px;
     margin-left: 14px;
 }
 
 .card_product img {
-    width: 100px;
+    width: 120px;
     height: auto;
+}
+
+.text-processors {
+    display: flex;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 1px;
+}
+
+.line-separator {
+    display: flex;
+    margin-top: 20px;
+    background-color: black;
+    margin-left: 65px;
+    width: 1230px;
+    height: 1px;
+}
+
+.top-selling-cards {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr)); 
+    margin-top: 50px;
+    margin-left: 60px;
+    width: 1230px;
+    height: 400px;
+    gap: 10px;
+    
+}
+.text-cards {
+    display: flex;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 1px;
+
+}
+
+
+
+
+.top-selling-laptops {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr)); 
+    margin-top: 50px;
+    margin-left: 60px;
+    width: 1230px;
+    height: 400px;
+    gap: 10px;
+}
+
+.text-laptops {
+    display: flex;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 1px;
+}
+
+.top-selling-keyboards {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr)); 
+    margin-top: 50px;
+    margin-left: 60px;
+    width: 1230px;
+    height: 400px;
+    gap: 10px;
+}
+
+.text-keyboards {
+    display: flex;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 1px;
+}
+
+.pre_builds {
+    display: flex;
+    margin-top: 100px;
+    margin-left: 65px;
+    width: 1230px;
+    height: 700px;  
+}
+
+.container-h1 {
+    display: flex;
+    width: 300px;
+    height: 50%;
+    margin-top: 70px;
+    margin-left: 800px;
+}
+
+.pre_builds img {
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 100px;
+    width: 500px;
+    height: auto;
+    mask-image: linear-gradient(80%, black)
+}
+
+.container-h1 h1 {
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.product-name {
+    display: flex;
+    margin-top: 80px;
+    margin-left: 750px;
+    width: 500px;
+}
+
+.container-img-product {
+    display: flex;
+    position: absolute;
+    width: 500px;
+    height: 450px;
+    margin-top: 80px;
+    margin-left: 100px;
+    background-color: rgb(197, 196, 196);
+}
+
+.container-img-product img {
+    margin-left: 20px;
+    transform: scale(0.8);
+}
+
+.container-product-description {
+    display: flex;
+    width: 500px;
+    height: 300px;
+    margin-top: 450px;
+    margin-left: 100px;
+}
+
+.container-product-description p {
+    font-weight: lighter;
+    font-size: 20px;
+    line-height: 2;
+}
+
+.container-info {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    padding: 20px 5px 20px 1px;
+    width: 440px;
+    height: 150px;
+    margin-top: 40px;
+    margin-left: 750px;
+}
+
+.container-info span {
+    font-weight: lighter;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    font-size: 25px;
+}
+
+.quantity-selector {
+    display: flex;
+    margin-top: -550px;
+    margin-left: 781px;
+    width: 200px;
+    height: 50px;
+    align-items: center;
+}
+
+
+.quantity-input {
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #000000;
+    padding: 4px;
 }
