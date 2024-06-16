@@ -42,69 +42,96 @@
     </div>    
     </div>
 
-    <div class ="show_products">
-        <div class="text-processors">
-            <h2>BEST SELLING PROCESSORS</h2>
-        </div>
-        {% for product in processors|slice:":5" %}
-                    <a href="{% url 'product' product.product_id %}">
-                        <div class="card_product">
-                            <h2>{{product.product_name}}</h2>
-                            <img src="{{product.product_img.url}}">
-                            <p>{{product.get_format_price}}</p>
-                        </div>
-                    </a>
-        {% endfor %}
+    <div class="show-all-processors">
+        <a href="#">View All Processors</a>
     </div>
 
+
+    <div class="text-processors">
+            <h2>BEST SELLING PROCESSORS</h2>
+        </div>
+    
+    <div class="show_products">
+    <div class="arrow-next"><span>&#x2192;</span></div>
+    <div class="arrow-prev"><span>&#x2190;</span></div>
+
+        <div class="product-carousel">
+            <div class="cards-container">
+                {% for product in processors|slice:":10" %}
+                <div class="card_product">
+                    <a href="{% url 'product' product.product_id %}">
+                        <img src="{{ product.product_img.url }}">
+                        <h2>{{ product.product_name }}</h2>
+                        <span>{{ product.get_format_price }}</span>
+                     </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+
+
     <div class="line-separator"></div>
+
+    <div class="show-all-cards">
+        <a href="#">View All Graphics Cards</a>
+    </div>
 
     <div class="top-selling-cards">
         <div class="text-cards">
             <h2>BEST SELLING GRAPHICS CARDS</h2>
         </div>
             {% for product in cards|slice:":5" %}
-                    <a href="{% url 'product' product.product_id %}">
                         <div class="card_product">
-                            <h2>{{product.product_name}}</h2>
-                            <img src="{{product.product_img.url}}">
-                        <p>{{product.get_format_price}}</p>
+                            <a href="{% url 'product' product.product_id %}">
+                                <img src="{{product.product_img.url}}">
+                                <h2>{{product.product_name}}</h2> 
+                            </a>
+                            <span>{{product.get_format_price}}</span>          
                         </div>
-                    </a>
             {% endfor %}
     </div>
 
     <div class="line-separator"></div>
+
+    <div class="show-all-laptops">
+        <a href="#">View All Laptops</a>
+    </div>
 
     <div class="top-selling-laptops">
         <div class="text-laptops">
             <h2>BEST SELLING LAPTOPS</h2>
         </div>
         {% for product in laptops|slice:":5" %}
-                <a href="{% url 'product' product.product_id %}">
                     <div class="card_product">
-                        <h2>{{product.product_name}}</h2>
-                        <img src="{{product.product_img.url}}">
-                        <p>{{product.get_format_price}}</p>
+                        <a href="{% url 'product' product.product_id %}">
+                            <img src="{{product.product_img.url}}">
+                            <h2>{{product.product_name}}</h2>
+                        </a>
+                        <span>{{product.get_format_price}}</span>
                     </div>
-                </a>
         {% endfor %}
     </div>
 
-    <div class="line-separator"></div>      
+    <div class="line-separator"></div>   
+
+    <div class="show-all-keyboards">
+        <a href="#">View All Keyboards</a>
+    </div>   
 
     <div class="top-selling-keyboards">
         <div class="text-keyboards">
             <h2>BEST SELLING KEYBOARDS</h2>
         </div>
         {% for product in keyboards|slice:":5" %}
-                <a href="{% url 'product' product.product_id %}">
                     <div class="card_product">
-                        <h2>{{product.product_name}}</h2>
-                        <img src="{{product.product_img.url}}">
-                        <p>{{product.get_format_price}}</p>
+                        <a href="{% url 'product' product.product_id %}">
+                            <img src="{{product.product_img.url}}">
+                            <h2>{{product.product_name}}</h2>
+                        </a>
+                        <span>{{product.get_format_price}}</span>
                     </div>
-                </a>
         {% endfor %}
     </div>
 
@@ -115,8 +142,15 @@
     </div>-->   
 
     <div class="footer">
-        <div class="social-links"></div>
         <div class="container-creator">Created by FelipeMadeIt</div>
         <div class="line"></div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i>
+        </div>
     </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'scripts/horizontalScroll.js' %}"></script>
 {% endblock %}

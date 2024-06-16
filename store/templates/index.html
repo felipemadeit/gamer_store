@@ -32,7 +32,7 @@
     </header>
     {% block body %}
     {% endblock %}
-        
-        <script src="{% static 'scripts/scripts.js' %}" async defer></script>
+        {% block script %}
+        {% endblock %} 
     </body>
 </html>

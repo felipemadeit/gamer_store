@@ -31,7 +31,13 @@ def home_view (request):
     
 
 def components_view (request):
-    return render(request, 'components.html')
+
+    # SQL query for all products 
+    products = Products.objects.all()
+
+    return render(request, 'components.html',  {
+        'products': products
+    })
 
 
 def prebuilds_view(request):
