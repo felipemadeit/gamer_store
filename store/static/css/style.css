@@ -554,8 +554,9 @@ input[type="password"] {
     color: white; 
   }
 
+/* Rows to horizontal scroll */
+
 .arrow-prev {
-    display: none;
     position: absolute;
     z-index: 99999999;
     cursor: pointer;
@@ -564,6 +565,9 @@ input[type="password"] {
     margin-left: 24px;
     width: 40px; 
     height: 40px;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .arrow-prev span {
@@ -574,7 +578,6 @@ input[type="password"] {
 }
 
 .arrow-next {
-    display: none;
     position: absolute;
     width: 40px; 
     height: 40px;
@@ -583,8 +586,9 @@ input[type="password"] {
     z-index: 99999999;
     cursor: pointer;
     background-color: #0d1b2a;
-
-
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .arrow-next span {
@@ -594,6 +598,7 @@ input[type="password"] {
     margin-top: -10px;
 }
 
+/* Carousel of products in the home view */
 
 .show_products {
     margin-top: 200px;
@@ -604,9 +609,10 @@ input[type="password"] {
 
 .show_products:hover .arrow-next,
 .show_products:hover .arrow-prev {
-    display: block; 
-
+    opacity: 1;
+    visibility: visible;
 }
+
 
 
 .product-carousel {
@@ -645,6 +651,7 @@ input[type="password"] {
 }
 
 .card_product h2 {
+    font-weight: bolder;
     font-size: 16px;
     margin: 0; 
     color: black;
@@ -652,16 +659,18 @@ input[type="password"] {
 
 .card_product span {
     position: absolute;
-    bottom: 10px; 
+    bottom: 18px; 
     left: 10px; 
     color: black;
 }
 
+/* Extras of processors carousel */
 .show-all-processors {
     display: flex;
     position: absolute;
     width: 200px;
     height: 30px;
+    cursor: pointer;
     border: 1px solid #000000;
     border-radius: 20px;
     background-color: #2b2d42;
@@ -679,74 +688,45 @@ input[type="password"] {
 .text-processors {
     display: flex;
     position: absolute;
-    margin-top: 130px;
+    margin-top: 125px;
     margin-left: 65px;
 }
 
-
+/* Line to separate the carousels in the home view */
 
 .line-separator {
     display: flex;
-    margin-top: 40px;
+    margin-top: 100px;
     background-color: black;
     margin-left: 65px;
     width: 1230px;
     height: 1px;
 }
 
-.top-selling-cards {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr)); 
-    margin-top: 50px;
-    margin-left: 60px;
-    width: 1230px;
-    height: 400px;
-    gap: 10px;
-    
-}
+
 .text-cards {
     display: flex;
     position: absolute;
-    margin-top: 20px;
-    margin-left: 1px;
-
+    margin-top: 125px;
+    margin-left: 65px;
 }
 
 
-
-
-.top-selling-laptops {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr)); 
-    margin-top: 50px;
-    margin-left: 60px;
-    width: 1230px;
-    height: 400px;
-    gap: 10px;
-}
 
 .text-laptops {
     display: flex;
     position: absolute;
-    margin-top: 20px;
-    margin-left: 1px;
+    margin-top: 125px;
+    margin-left: 65px;
 }
 
-.top-selling-keyboards {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr)); 
-    margin-top: 50px;
-    margin-left: 60px;
-    width: 1230px;
-    height: 400px;
-    gap: 10px;
-}
+
 
 .text-keyboards {
     display: flex;
     position: absolute;
-    margin-top: 20px;
-    margin-left: 1px;
+    margin-top: 125px;
+    margin-left: 65px;
 }
 
 .pre_builds {
@@ -933,8 +913,9 @@ input[type="password"] {
 
 .container-products {
     display: grid;
+
     width: 1050px;
-    height: 1000px;
+    height: 3500px;
     margin-top: 130px;
     margin-left: 250px;
     padding-top: -3px;
@@ -1001,17 +982,16 @@ input[type="password"] {
 }    
 
 
-
-
 .show-all-cards {
     display: flex;
     position: absolute;
     width: 200px;
     height: 30px;
+    cursor: pointer;
     border: 1px solid #000000;
     border-radius: 20px;
     background-color: #2b2d42;
-    margin-top: 80px;
+    margin-top: 130px;
     margin-left: 1090px;
     justify-content: center;
     align-items: center;
@@ -1021,15 +1001,18 @@ input[type="password"] {
     color: white;
 }
 
+
+
 .show-all-laptops {
     display: flex;
     position: absolute;
     width: 200px;
     height: 30px;
+    cursor: pointer;
     border: 1px solid #000000;
     border-radius: 20px;
     background-color: #2b2d42;
-    margin-top: 80px;
+    margin-top: 130px;
     margin-left: 1090px;
     justify-content: center;
     align-items: center;
@@ -1044,10 +1027,11 @@ input[type="password"] {
     position: absolute;
     width: 200px;
     height: 30px;
+    cursor: pointer;
     border: 1px solid #000000;
     border-radius: 20px;
     background-color: #2b2d42;
-    margin-top: 80px;
+    margin-top: 130px;
     margin-left: 1090px;
     justify-content: center;
     align-items: center;

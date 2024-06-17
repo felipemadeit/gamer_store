@@ -99,7 +99,38 @@ def sign_out (request):
 
 
 def product_view(request, product_id):
+
     product = get_object_or_404(Products, product_id=product_id)
     return render(request, 'product.html',  {
         'product': product
+    })
+
+
+def processors_view(request):
+
+    # SQL query for get all processors and their data
+    processors = Products.objects.filter(product_category = 'Processor')
+
+    return render(request, 'processors.html', {
+        'processors' : processors
+    })
+
+def graphics_view (request):
+
+    # SQL Query for get all graphis cards and their data
+
+    graphics = Products.objects.filter(product_category = 'Graphics card')
+
+    return render(request, 'graphics.html', {
+        'graphics' : graphics
+    })
+
+def ram_view (request):
+
+    # SQL Query for get all ram and their data
+
+    ram = Products.objects.filter(product_category = 'Ram')
+
+    return render(request, 'rams.html',  {
+        'ram': ram
     })

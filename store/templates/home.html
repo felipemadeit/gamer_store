@@ -23,96 +23,115 @@
         </div>
         <span class="laptop-span">Laptops</span>
     </div>
-    <div class="offers">
-        <div class="card">
-            <a href=""><img class="laptop-img-offer" src="{% static 'media/laptopoffer.png' %}"></a>
-            <a href=""><img class="laptop-img-text" src="{% static 'media/offlaptops.png' %}"></a>
-        </div>
-        <div class="card">
-            <a href=""><img class="chasis-img-offer" src="{% static 'media/thermal.png' %}"></a>
-            <a href=""><img class="chasis-img-text" src="{% static 'media/componentsoffers.png' %}"></a>   
-        </div>
-        <div class="card">
-            <a href=""><img class="card-img-offer" src="{% static 'media/card.png' %}"></a>
-            <a href=""><img class="card-img-text" src="{% static 'media/cardsoffer.png' %}"></a>            
-        </div>
-       
-    <div class="container-button-offers">
-        <a href="#" class="button-offers"> Explore all our offers</a>
-    </div>    
-    </div>
+
+
+    <!--Button for the all processors view-->
 
     <div class="show-all-processors">
-        <a href="#">View All Processors</a>
+        <a href="{% url 'processors' %}">View All Processors</a>
     </div>
 
+    <!--Text to the best selling processors section-->
 
     <div class="text-processors">
             <h2>BEST SELLING PROCESSORS</h2>
         </div>
+
+    <!--Section to the processors carousel-->
+
+    <div class="show_products processors">
+        <div class="arrow-next"><span>&#x2192;</span></div>
+        <div class="arrow-prev"><span>&#x2190;</span></div>
+
+            <div class="product-carousel processors">
+                <div class="cards-container processors">
+                    {% for product in processors|slice:":10" %}
+                    <div class="card_product processors">
+                        <a href="{% url 'product' product.product_id %}">
+                            <img src="{{ product.product_img.url }}">
+                            <h2>{{ product.product_name }}</h2>
+                            <span>{{ product.get_format_price }}</span>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     
-    <div class="show_products">
+
+    <!--This div separates the carousels -->
+
+    <div class="line-separator"></div>
+
+    <!--This button is for the all graphics card view-->
+
+    <div class="show-all-cards">
+        <a href="{% url 'graphics' %}">View All Graphics Cards</a>
+    </div>
+
+    <!--Text to the best selling cards section-->
+
+    <div class="text-cards">
+        <h2>BEST SELLING GRAPHICS CARDS</h2>
+    </div>
+
+    <!--Carousel for the best selling cards graphics-->
+
+    <div class="show_products graphics">
     <div class="arrow-next"><span>&#x2192;</span></div>
     <div class="arrow-prev"><span>&#x2190;</span></div>
 
-        <div class="product-carousel">
-            <div class="cards-container">
-                {% for product in processors|slice:":10" %}
-                <div class="card_product">
-                    <a href="{% url 'product' product.product_id %}">
-                        <img src="{{ product.product_img.url }}">
-                        <h2>{{ product.product_name }}</h2>
-                        <span>{{ product.get_format_price }}</span>
-                     </a>
-                </div>
+        <div class="product-carousel graphics">
+            <div class="cards-container graphics">
+                {% for product in cards|slice:":10" %}
+                    <div class="card_product graphics">
+                        <a href="{% url 'product' product.product_id %}">
+                            <img src="{{product.product_img.url}}">
+                            <h2>{{product.product_name}}</h2> 
+                            <span>{{product.get_format_price}}</span>
+                        </a>
+                    </div>
                 {% endfor %}
             </div>
         </div>
     </div>
-    
 
 
-    <div class="line-separator"></div>
-
-    <div class="show-all-cards">
-        <a href="#">View All Graphics Cards</a>
-    </div>
-
-    <div class="top-selling-cards">
-        <div class="text-cards">
-            <h2>BEST SELLING GRAPHICS CARDS</h2>
-        </div>
-            {% for product in cards|slice:":5" %}
-                        <div class="card_product">
-                            <a href="{% url 'product' product.product_id %}">
-                                <img src="{{product.product_img.url}}">
-                                <h2>{{product.product_name}}</h2> 
-                            </a>
-                            <span>{{product.get_format_price}}</span>          
-                        </div>
-            {% endfor %}
-    </div>
+    <!--Div for separate the carousels-->
 
     <div class="line-separator"></div>
+
+
+    <!--Button for all laptops view-->
 
     <div class="show-all-laptops">
         <a href="#">View All Laptops</a>
     </div>
 
-    <div class="top-selling-laptops">
-        <div class="text-laptops">
-            <h2>BEST SELLING LAPTOPS</h2>
-        </div>
-        {% for product in laptops|slice:":5" %}
-                    <div class="card_product">
+    <!--Text for best selling laptops section-->
+
+    <div class="text-laptops">
+        <h2>BEST SELLING LAPTOPS</h2>
+    </div>
+
+    <div class="show_products laptops">
+        <div class="arrow-next"><span>&#x2192;</span></div>
+        <div class="arrow-prev"><span>&#x2190;</span></div>
+        <div class="product-carousel laptops">
+            <div class="cards-container laptops">
+                {% for product in laptops|slice:":10" %}
+                    <div class="card_product laptops">
                         <a href="{% url 'product' product.product_id %}">
                             <img src="{{product.product_img.url}}">
                             <h2>{{product.product_name}}</h2>
+                            <span>{{product.get_format_price}}</span>
                         </a>
-                        <span>{{product.get_format_price}}</span>
                     </div>
-        {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
     </div>
+
 
     <div class="line-separator"></div>   
 
@@ -120,19 +139,26 @@
         <a href="#">View All Keyboards</a>
     </div>   
 
-    <div class="top-selling-keyboards">
-        <div class="text-keyboards">
-            <h2>BEST SELLING KEYBOARDS</h2>
-        </div>
-        {% for product in keyboards|slice:":5" %}
-                    <div class="card_product">
+    <div class="text-keyboards">
+        <h2>BEST SELLING KEYBOARDS</h2>
+    </div>
+
+    <div class="show_products keyboards">
+        <div class="arrow-next"><span>&#x2192;</span></div>
+        <div class="arrow-prev"><span>&#x2190;</span></div>
+        <div class="product-carousel keyboards">
+            <div class="cards-container keyboards">
+                {% for product in keyboards|slice:":10" %}
+                    <div class="card_product keyboards">
                         <a href="{% url 'product' product.product_id %}">
                             <img src="{{product.product_img.url}}">
                             <h2>{{product.product_name}}</h2>
-                        </a>
-                        <span>{{product.get_format_price}}</span>
+                            <span>{{product.get_format_price}}</span>
+                        </a>    
                     </div>
-        {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
     </div>
 
     <!--<div class="pre_builds">
