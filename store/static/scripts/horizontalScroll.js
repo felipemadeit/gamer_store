@@ -3,6 +3,12 @@ document.addEventListener("DOMContentLoaded", function() {
 const prevButtonProcessors = document.querySelector(".show_products.processors .arrow-prev");
 const nextButtonProcessors = document.querySelector(".show_products.processors .arrow-next");
 const cardsContainerProcessors = document.querySelector(".show_products.processors .cards-container");
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+
 // Eventos para botones de navegación de procesadores
 prevButtonProcessors.addEventListener("click", function() {
     cardsContainerProcessors.scrollBy({
@@ -16,6 +22,32 @@ nextButtonProcessors.addEventListener("click", function() {
         behavior: "smooth"
     });
 });
+
+cardsContainerProcessors.addEventListener("mousedown", function(e)  {
+    console.log("baj")
+    isDown = true;
+    startX = e.pageX - cardsContainerProcessors.offsetLeft;
+    scrollLeft = cardsContainerProcessors.scrollLeft;
+})
+
+cardsContainerProcessors.addEventListener("mouseleave", function() {
+    isDown = false;
+})
+
+cardsContainerProcessors.addEventListener("mouseup", function() {
+    isDown = false;
+})
+
+ cardsContainerProcessors.addEventListener("mousemove", function(e) {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - cardsContainerProcessors.offsetLeft;
+    const walk = (x-startX)*3;
+    cardsContainerProcessors.scrollLeft = scrollLeft-walk;
+})
+
+
+
 // Selectores para el carrusel de gráficos
 const prevButtonGraphics = document.querySelector(".show_products.graphics .arrow-prev");
 const nextButtonGraphics = document.querySelector(".show_products.graphics .arrow-next");

@@ -10,16 +10,16 @@ from .models import *
 def home_view (request):
 
     # SQL Query for the Processors
-    products_processor = Product.objects.filter(product_category = 'Processor')
+    products_processor = Processor.objects.all()
 
     # SQL Query for the Graphics cards
-    products_cards = Product.objects.filter(product_category = 'Graphics card')
+    products_cards = Graphics_card.objects.all()
 
     # SQL Query for the Laptops
     products_laptops = Laptop.objects.all()
 
     # SQL Query for the Keyboards
-    products_keyboards = Product.objects.filter(product_category = 'Keyboards')
+    products_keyboards = Keyboard.objects.all()
 
     return render(request, 'home.html', {
         'processors': products_processor,

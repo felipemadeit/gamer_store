@@ -630,12 +630,12 @@ input[type="password"] {
 
 .card_product {
     flex: 0 0 auto;
-    width: 215px; 
-    height: 300px; 
+    width: 230px; 
+    height: 310px; 
     margin-right: 11px; 
     border: 1px solid rgb(179, 179, 179);
     border-radius: 20px;
-    padding: 10px;
+    padding-top: 20px 10px ;
     position: relative; 
 }
 
@@ -644,16 +644,20 @@ input[type="password"] {
 }
 
 .card_product img {
+    position: absolute;
     width: 100%; 
     height: auto;
     display: block;
-    margin-bottom: 10px; 
+    top: 3px;
+    transform: scale(0.9); 
 }
 
 .card_product h2 {
+    position: absolute;
     font-weight: bolder;
     font-size: 16px;
-    margin: 0; 
+    top: 220px;
+    margin-left: 10px;
     color: black;
 }
 
