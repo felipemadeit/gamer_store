@@ -928,6 +928,7 @@ input[type="password"] {
     display: flex;
     width: 240px;
     height: 300px;
+    max-height: 300px;
     margin-left: 5px;
     border: 1px solid rgb(92, 92, 92);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);

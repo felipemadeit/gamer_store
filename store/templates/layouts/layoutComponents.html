@@ -1,12 +1,6 @@
-{% extends 'index.html' %}
+{% load static %}
 
-{% block title %}
-    Processors
-{% endblock %}
-
-{% block body %}
-
-    <div class="tags">
+<div class="tags">
         <ul>
             <li><a href="{% url 'processors' %}">Processors</a></li>
             <li><a href="{% url 'graphics' %}">Graphics Cards</a></li>
@@ -39,5 +33,3 @@
             </a>
         {% endfor %}
     </div>
-    
-{% endblock %}

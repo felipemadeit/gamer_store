@@ -119,12 +119,12 @@
         <div class="arrow-prev"><span>&#x2190;</span></div>
         <div class="product-carousel laptops">
             <div class="cards-container laptops">
-                {% for product in laptops|slice:":10" %}
+                {% for laptop in laptops|slice:":10" %}
                     <div class="card_product laptops">
-                        <a href="{% url 'product' product.product_id %}">
-                            <img src="{{product.product_img.url}}">
-                            <h2>{{product.product_name}}</h2>
-                            <span>{{product.get_format_price}}</span>
+                        <a href="{% url 'product' laptop.product_id %}">
+                            <img src="{{laptop.laptop_img.url}}">
+                            <h2>{{laptop.laptop_name}}</h2>
+                            <span>{{laptop.get_format_price}}</span>
                         </a>
                     </div>
                 {% endfor %}

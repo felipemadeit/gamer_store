@@ -4,22 +4,22 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.forms import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
-from .models import Products
+from .models import *
 
 # Home view
 def home_view (request):
 
     # SQL Query for the Processors
-    products_processor = Products.objects.filter(product_category = 'Processor')
+    products_processor = Product.objects.filter(product_category = 'Processor')
 
     # SQL Query for the Graphics cards
-    products_cards = Products.objects.filter(product_category = 'Graphics card')
+    products_cards = Product.objects.filter(product_category = 'Graphics card')
 
     # SQL Query for the Laptops
-    products_laptops = Products.objects.filter(product_category = 'Laptops')
+    products_laptops = Laptop.objects.all()
 
     # SQL Query for the Keyboards
-    products_keyboards = Products.objects.filter(product_category = 'Keyboards')
+    products_keyboards = Product.objects.filter(product_category = 'Keyboards')
 
     return render(request, 'home.html', {
         'processors': products_processor,
@@ -33,7 +33,7 @@ def home_view (request):
 def components_view (request):
 
     # SQL query for all products 
-    products = Products.objects.all()
+    products = Product.objects.all()
 
     return render(request, 'components.html',  {
         'products': products
@@ -100,7 +100,7 @@ def sign_out (request):
 
 def product_view(request, product_id):
 
-    product = get_object_or_404(Products, product_id=product_id)
+    product = get_object_or_404(Product, product_id=product_id)
     return render(request, 'product.html',  {
         'product': product
     })
@@ -109,27 +109,27 @@ def product_view(request, product_id):
 def processors_view(request):
 
     # SQL query for get all processors and their data
-    processors = Products.objects.filter(product_category = 'Processor')
+    processors = Product.objects.filter(product_category = 'Processor')
 
     return render(request, 'processors.html', {
-        'processors' : processors
+        'products' : processors
     })
 
 def graphics_view (request):
 
     # SQL Query for get all graphis cards and their data
 
-    graphics = Products.objects.filter(product_category = 'Graphics card')
+    products = Product.objects.filter(product_category = 'Graphics card')
 
     return render(request, 'graphics.html', {
-        'graphics' : graphics
+        'graphics' : products
     })
 
 def ram_view (request):
 
     # SQL Query for get all ram and their data
 
-    ram = Products.objects.filter(product_category = 'Ram')
+    ram = Product.objects.filter(product_category = 'Ram')
 
     return render(request, 'rams.html',  {
         'ram': ram

@@ -5,38 +5,7 @@
 {% endblock %}
 
 {% block body %}
-    <div class="tags">
-        <ul>
-            <li><a href="{% url 'processors' %}">Processors</a></li>
-            <li><a href="{% url 'graphics' %}">Graphics Cards</a></li>
-            <li><a href="{% url 'ram' %}">RAM Memory</a></li>
-            <li><a href="#">MotherBoards</a></li>
-            <li><a href="#">Storage</a></li>
-            <li><a href="#">Power Supply</a></li>
-            <li><a href="#">Cases</a></li>
-            <li><a href="#">HeadPhones</a></li>
-            <li><a href="#">KeyBoards</a></li>
-            <li><a href="#">Refrigeration</a></li>
-            <li><a href="#">Monitors</a></li>
-            <li><a href="#">Gaming Chairs</a></li>
-            <li><a href="#">Accessories</a></li>
-        </ul>
-    </div>
 
-    <div class="container-filter">
-        Filter By
-    </div>
-
-    <div class="container-products">
-        {% for product in products %}
-            <a href="{% url 'product' product.product_id %}">
-                <div class="card-product">
-                    <h2>{{product.product_name}}</h2>
-                    <img src="{{product.product_img.url}}">
-                    <p>{{product.get_format_price}}</p>
-                </div>
-            </a>
-        {% endfor %}
-    </div>
+    {% include 'layouts/layoutComponents.html' %}
 
 {% endblock %}
