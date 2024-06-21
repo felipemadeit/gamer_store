@@ -33,10 +33,19 @@ def home_view (request):
 def components_view (request):
 
     # SQL query for all products 
-    products = Product.objects.all()
+    processors = Processor.objects.all()
+    graphics = Graphics_card.objects.all()
+    keyboards = Keyboard.objects.all()
+    mouses = Mouse.objects.all()
+    rams = Ram.objects.all()
+
 
     return render(request, 'components.html',  {
-        'products': products
+        'processors': processors,
+        'graphics' : graphics,
+        'keyboards' : keyboards,
+        'mouses': mouses,
+        'rams': rams
     })
 
 
@@ -109,10 +118,10 @@ def product_view(request, product_id):
 def processors_view(request):
 
     # SQL query for get all processors and their data
-    processors = Product.objects.filter(product_category = 'Processor')
+    processors = Processor.objects.all()
 
     return render(request, 'processors.html', {
-        'products' : processors
+        'processors' : processors
     })
 
 def graphics_view (request):

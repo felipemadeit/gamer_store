@@ -13,6 +13,7 @@ admin.site.register(Keyboard)
 admin.site.register(Category)
 admin.site.register(Case)
 admin.site.register(Laptop)
+admin.site.register(Mouse)
 
 
 

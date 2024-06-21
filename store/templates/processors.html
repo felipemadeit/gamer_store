@@ -28,15 +28,15 @@
         Filter By
     </div>
 
-    <div class="container-products">
-        {% for product in products %}
-            <a href="{% url 'product' product.product_id %}">
-                <div class="card-product">
-                    <h2>{{product.product_name}}</h2>
-                    <img src="{{product.product_img.url}}">
-                    <p>{{product.get_format_price}}</p>
-                </div>
-            </a>
+    <div class="container-components">
+        {% for processor in processors %}
+            <div class="component-card">
+                <a href="{% url 'product' processor.product_id %}">
+                    <img src="{{ processor.processor_img.url }}" alt="{{product.processor_name}}">
+                    <h2>{{processor.processor_name}}</h2>
+                </a>
+                <span>{{processor.get_format_price}}</span>
+            </div>
         {% endfor %}
     </div>
     

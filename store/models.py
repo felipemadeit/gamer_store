@@ -284,3 +284,20 @@ class Laptop(models.Model):
     
     def __str__(self):
         return self.laptop_name
+    
+class Mouse(models.Model):
+    product = models.OneToOneField(Product, on_delete=models.CASCADE)
+    mouse_name = models.CharField(max_length=100)
+    mouse_brand = models.CharField(max_length=200)
+    mouse_description = models.TextField(null= True)
+    mouse_img = models.ImageField(upload_to='store/static/media/products/mouses')
+    mouse_price = models.PositiveIntegerField()
+    mouse_stock = models.IntegerField(default = 0)
+    mouse_date_created = models.DateTimeField(auto_now_add=True)
+    mouse_date_modified = models.DateTimeField(auto_now=True)
+
+    def get_format_price(self):
+        return "${:,.0f}".format(self.mouse_price)
+    
+    def __str__(self):
+        return self.mouse_name

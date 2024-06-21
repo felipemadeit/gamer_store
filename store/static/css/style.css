@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #e0e1dd;
+    background-color: #edf2f4;
     overflow-x: hidden;
 }
 
@@ -21,7 +21,7 @@ a {
 
 header {
     position: sticky; top: 0;
-    z-index: 1000;
+    z-index: 100000000;
 }
 
 .nav-bar {
@@ -618,11 +618,13 @@ input[type="password"] {
 .product-carousel {
     margin-left: 60px;
     width: 1230px;
+    height: 400px;
     overflow-x: hidden; 
 }
 
 .cards-container {
     display: flex;
+    height: 380px;
     overflow-x: hidden; 
     scroll-behavior: smooth; 
     -webkit-overflow-scrolling: touch; 
@@ -630,43 +632,74 @@ input[type="password"] {
 
 .card_product {
     flex: 0 0 auto;
-    width: 230px; 
-    height: 310px; 
-    margin-right: 11px; 
-    border: 1px solid rgb(179, 179, 179);
+    background-color: #edf2f4;
+    background: linear-gradient(to bottom, gray 60%, white 40%);
+    width: 240px; 
+    height: 370px; 
+    margin-top: 5px;
+    margin-right: 6px;
+    box-shadow: 1px 2px 5px rgb(110, 110, 110, 0.5); 
     border-radius: 20px;
     padding-top: 20px 10px ;
     position: relative; 
 }
+
 
 .card_product a {
     text-decoration: none;
 }
 
 .card_product img {
-    position: absolute;
+    position: relative;
     width: 100%; 
     height: auto;
     display: block;
-    top: 3px;
-    transform: scale(0.9); 
+    top: -5px;
+    transform: scale(0.8); 
 }
 
 .card_product h2 {
     position: absolute;
     font-weight: bolder;
-    font-size: 16px;
-    top: 220px;
-    margin-left: 10px;
+    font-size: 18px;
+    top:235px;
+    left: 15px;
+    right: 15px;
     color: black;
 }
 
-.card_product span {
+
+.add-cart {
+   display: block;
+   position: relative;
+   top: 70px;
+   left: 70px;
+   width: 90px;
+   height: 30px;
+   line-height: 30px;
+   border-radius: 20px;
+   background-color: gray;
+   text-align: center;
+   color: white; 
+}
+
+.span-stock {
+    position: relative;
+    top:45px ;
+    left: 100px ;
+    color: green;
+}
+
+
+
+.product-price {
     position: absolute;
-    bottom: 18px; 
-    left: 10px; 
+    font-size: 17px;
+    top: 285px; 
+    left: 15px; 
     color: black;
 }
+
 
 /* Extras of processors carousel */
 .show-all-processors {
@@ -898,9 +931,30 @@ input[type="password"] {
 .tags {
     position: absolute;
     width: 200px;
-    height: 500px;
-    margin-top: 40px;
+    height: 900px;
+    margin-top: 68px;
     margin-left: 40px;
+}
+
+.tags  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.separator-tags {
+    display: flex;
+    position:absolute;
+    width: 90px;
+    height: 2px;
+    margin-top: 5px;
+    margin-left: 10px;
+    background-color: #000000;
+}
+
+.tags ul {
+    margin-top: 30px;
 }
 
 .tags ul li {
@@ -911,64 +965,95 @@ input[type="password"] {
 
 .tags ul li a {
     text-decoration: none;
-    color: #2b2d42;
+    color: black;
     font-size: 20px;
 }
 
-.container-products {
+.container-components {
     display: grid;
-
+    grid-template-columns: repeat(4, 4fr);
+    padding: 20px;
+    margin-top: 120px;
+    margin-left: 235px;
     width: 1050px;
-    height: 3500px;
-    margin-top: 130px;
-    margin-left: 250px;
-    padding-top: -3px;
-    grid-template-columns: repeat(4, minmax(0, 1fr)); 
-    gap: 5px;
-    
+    height: 4000px;
 }
 
-.card-product { 
-    display: flex;
-    width: 240px;
-    height: 300px;
-    max-height: 300px;
-    margin-left: 5px;
-    border: 1px solid rgb(92, 92, 92);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+.component-card { 
+    flex: 0 0 auto;
+    width: 240px; 
+    height: 370px; 
+    margin-right: 11px; 
+    background-color: #edf2f4;
+    background: linear-gradient(to bottom, gray 60%, white 40%);
+    box-shadow: 1px 2px 5px rgb(110, 110, 110, 0.5); 
+    border-radius: 20px;
+    padding-top: 20px 10px ;
+    position: relative; 
 }
 
 
-.card-product img {
-    position: absolute;
+
+.component-card a {
+    text-decoration: none;
+}
+
+.component-card img {
+    position: relative;
+    width: 100%; 
     height: auto;
-    margin-top: 40px;
-    margin-left: 65px;
-    transform: scale(1.5);
+    display: block;
+    top: -5px;
+    transform: scale(0.8); 
 }
 
-.card-product  h2{
-    color: black;
-    font-weight: bold;
-    font-size: 15px;
-    letter-spacing: 1px;
-    margin-top: 190px;
-    margin-left: 14px;
-
-}
-
-.card-product p {
+.component-card h2{
     position: absolute;
+    font-weight: bolder;
+    font-size: 18px;
+    top: 235px;
+    left: 15px;
+    right: 15px;
     color: black;
-    margin-top: 255px;
-    margin-left: 14px;
+
 }
 
-.card-product img {
-    width: 120px;
-    height: auto;
+#span-stock-ly {
+    position: relative;
+    top:45px ;
+    left: 100px ;
+    color: green;
 }
 
+#product-price-ly {
+    position: absolute;
+    font-size: 17px;
+    top: 285px; 
+    left: 15px; 
+    color: black;
+}
+
+.add-cart {
+    display: block;
+    position: relative;
+    top: 70px;
+    left: 75px;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 20px;
+    background-color: gray;
+    text-align: center;
+    color: white; 
+ }
+
+
+.component-card span {
+    position: absolute;
+    top: 270px; 
+    left: 15px; 
+    color: black;
+}
 
 .container-filter {
     display: flex;
@@ -977,7 +1062,7 @@ input[type="password"] {
     border: 1px solid black;
     border-radius: 40px;
     margin-top: 68px;
-    margin-left: 1085px;
+    margin-left: 1070px;
     background-color: #2b2d42;
     color: white;
     width: 200px;

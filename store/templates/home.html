@@ -46,12 +46,14 @@
             <div class="product-carousel processors">
                 <div class="cards-container processors">
                     {% for processor in processors|slice:":10" %}
-                        <div class="card_product processors">
+                        <div class="card_product processors">        
                             <a href="{% url 'product' processor.product_id %}">
                                 <img src="{{ processor.processor_img.url }}">
                                 <h2>{{ processor.processor_name }}</h2>
-                                <span>{{ processor.get_format_price }}</span>
+                                <span class="product-price">{{ processor.get_format_price }}</span>
                             </a>
+                            <span class="span-stock"> &#x2713; Stock</span> 
+                            <a class="add-cart" href="#">Add to cart</a>
                         </div>
                     {% endfor %}
                 </div>
@@ -88,8 +90,10 @@
                         <a href="{% url 'product' card.product_id %}">
                             <img src="{{card.card_img.url}}">
                             <h2>{{card.card_name}}</h2> 
-                            <span>{{card.get_format_price}}</span>
+                            <span class="product-price">{{card.get_format_price}}</span>
                         </a>
+                        <span class="span-stock"> &#x2713; Stock</span> 
+                        <a class="add-cart" href="#">Add to cart</a>
                     </div>
                 {% endfor %}
             </div>
@@ -124,8 +128,10 @@
                         <a href="{% url 'product' laptop.product_id %}">
                             <img src="{{laptop.laptop_img.url}}">
                             <h2>{{laptop.laptop_name}}</h2>
-                            <span>{{laptop.get_format_price}}</span>
+                            <span class="product-price">{{laptop.get_format_price}}</span>
                         </a>
+                        <span class="span-stock"> &#x2713; Stock</span> 
+                        <a class="add-cart" href="#">Add to cart</a>
                     </div>
                 {% endfor %}
             </div>
@@ -153,8 +159,10 @@
                         <a href="{% url 'product' keyboard.product_id %}">
                             <img src="{{keyboard.keyboard_img.url}}">
                             <h2>{{keyboard.keyboard_name}}</h2>
-                            <span>{{keyboard.get_format_price}}</span>
-                        </a>    
+                            <span class="product-price">{{keyboard.get_format_price}}</span>
+                        </a> 
+                        <span class="span-stock"> &#x2713; Stock</span> 
+                        <a class="add-cart" href="#">Add to cart</a>   
                     </div>
                 {% endfor %}
             </div>

@@ -1,6 +1,8 @@
 {% load static %}
 
 <div class="tags">
+    <h2>Categories</h2>
+    <div class="separator-tags"></div>
         <ul>
             <li><a href="{% url 'processors' %}">Processors</a></li>
             <li><a href="{% url 'graphics' %}">Graphics Cards</a></li>
@@ -22,14 +24,65 @@
         Filter By
     </div>
 
-    <div class="container-products">
-        {% for product in products %}
-            <a href="{% url 'product' product.product_id %}">
-                <div class="card-product">
-                    <h2>{{product.product_name}}</h2>
-                    <img src="{{product.product_img.url}}">
-                    <p>{{product.get_format_price}}</p>
-                </div>
-            </a>
+    <div class="container-components">
+        {% for processor in processors %}
+            <div class="component-card">
+                <a href="{% url 'product' processor.product_id %}">
+                    <img src="{{ processor.processor_img.url }}" alt="{{product.processor_name}}">
+                    <h2>{{processor.processor_name}}</h2>
+                </a>
+                <span id="product-price-ly">{{processor.get_format_price}}</span>
+                <span id="span-stock-ly"> &#x2713; Stock</span>
+                <a class="add-cart" href="#">Add to cart</a>
+            </div>
         {% endfor %}
+
+        {% for card in graphics %}
+            <div class="component-card">
+                <a href="{% url 'product' card.product_id %}">
+                    <img src="{{ card.card_img.url }}" alt="{{ card.card_name}}">
+                    <h2>{{card.card_name}}</h2>
+                </a>
+                <span id="product-price-ly">{{card.get_format_price}}</span>
+                <span id="span-stock-ly"> &#x2713; Stock</span>
+                <a class="add-cart" href="#">Add to cart</a>
+            </div>
+        {% endfor %}
+
+        {% for keyboard in keyboards %}
+            <div class="component-card">
+                <a href="{% url 'product' keyboard.product_id %}">
+                    <img src="{{ keyboard.keyboard_img.url }}" alt="{{ keyboard.keyboard_name}}">
+                    <h2>{{keyboard.keyboard_name}}</h2>
+                </a>
+                <span id="product-price-ly">{{keyboard.get_format_price}}</span>
+                <span id="span-stock-ly"> &#x2713; Stock</span>
+                <a class="add-cart" href="#">Add to cart</a>
+            </div>
+        {% endfor %}
+
+        {% for mouse in mouses %}
+            <div class="component-card">
+                <a href="{% url 'product' mouse.product_id %}">
+                    <img src="{{ mouse.mouse_img.url }}" alt="{{ mouse.mouse_name}}">
+                    <h2>{{mouse.mouse_name}}</h2>
+                </a>
+                <span id="product-price-ly">{{mouse.get_format_price}}</span>
+                <span id="span-stock-ly"> &#x2713; Stock</span>
+                <a class="add-cart" href="#">Add to cart</a>
+            </div>
+        {% endfor %}
+
+        {% for ram in rams %}
+            <div class="component-card">
+                <a href="{% url 'product' ram.product_id %}">
+                    <img src="{{ ram.ram_img.url }}" alt="{{ ram.ram_name}}">
+                    <h2>{{ram.ram_name}}</h2>
+                </a>
+                <span id="product-price-ly">{{ram.get_format_price}}</span>
+                <span id="span-stock-ly"> &#x2713; Stock</span>
+                <a class="add-cart" href="#">Add to cart</a>
+            </div>
+        {% endfor %}
+
     </div>
