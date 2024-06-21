@@ -47,9 +47,9 @@
                 <div class="cards-container processors">
                     {% for processor in processors|slice:":10" %}
                         <div class="card_product processors">        
-                            <a href="{% url 'product' processor.product_id %}">
-                                <img src="{{ processor.processor_img.url }}">
-                                <h2>{{ processor.processor_name }}</h2>
+                            <a href="{% url 'product' processor.id %}">
+                                <img src="{{ processor.img.url }}">
+                                <h2>{{ processor.name }}</h2>
                                 <span class="product-price">{{ processor.get_format_price }}</span>
                             </a>
                             <span class="span-stock"> &#x2713; Stock</span> 
@@ -87,9 +87,9 @@
             <div class="cards-container graphics">
                 {% for card in cards|slice:":10" %}
                     <div class="card_product graphics">
-                        <a href="{% url 'product' card.product_id %}">
-                            <img src="{{card.card_img.url}}">
-                            <h2>{{card.card_name}}</h2> 
+                        <a href="{% url 'product' card.id %}">
+                            <img src="{{card.img.url}}">
+                            <h2>{{card.name}}</h2> 
                             <span class="product-price">{{card.get_format_price}}</span>
                         </a>
                         <span class="span-stock"> &#x2713; Stock</span> 
@@ -125,9 +125,9 @@
             <div class="cards-container laptops">
                 {% for laptop in laptops|slice:":10" %}
                     <div class="card_product laptops">
-                        <a href="{% url 'product' laptop.product_id %}">
-                            <img src="{{laptop.laptop_img.url}}">
-                            <h2>{{laptop.laptop_name}}</h2>
+                        <a href="{% url 'product' laptop.id %}">
+                            <img src="{{laptop.img.url}}">
+                            <h2>{{laptop.name}}</h2>
                             <span class="product-price">{{laptop.get_format_price}}</span>
                         </a>
                         <span class="span-stock"> &#x2713; Stock</span> 
@@ -156,9 +156,9 @@
             <div class="cards-container keyboards">
                 {% for keyboard in keyboards|slice:":10" %}
                     <div class="card_product keyboards">
-                        <a href="{% url 'product' keyboard.product_id %}">
-                            <img src="{{keyboard.keyboard_img.url}}">
-                            <h2>{{keyboard.keyboard_name}}</h2>
+                        <a href="{% url 'product' keyboard.id %}">
+                            <img src="{{keyboard.img.url}}">
+                            <h2>{{keyboard.name}}</h2>
                             <span class="product-price">{{keyboard.get_format_price}}</span>
                         </a> 
                         <span class="span-stock"> &#x2713; Stock</span> 

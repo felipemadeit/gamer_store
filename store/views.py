@@ -5,6 +5,8 @@ from django.contrib.auth.forms import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
 from .models import *
+from django.core.paginator import Paginator
+from django.http import Http404
 
 # Home view
 def home_view (request):
@@ -21,6 +23,8 @@ def home_view (request):
     # SQL Query for the Keyboards
     products_keyboards = Keyboard.objects.all()
 
+    
+
     return render(request, 'home.html', {
         'processors': products_processor,
         'cards': products_cards,
@@ -33,20 +37,30 @@ def home_view (request):
 def components_view (request):
 
     # SQL query for all products 
-    processors = Processor.objects.all()
-    graphics = Graphics_card.objects.all()
-    keyboards = Keyboard.objects.all()
-    mouses = Mouse.objects.all()
-    rams = Ram.objects.all()
+    processors = Processor.objects.all()[:5]
+    graphics = Graphics_card.objects.all()[:5]
+    keyboards = Keyboard.objects.all()[:5]
+    mouses = Mouse.objects.all()[:5]
+    rams = Ram.objects.all()[:5]
+    motherboards = MotherBoard.objects.all()[:5]
+
+    list_products = [processors, graphics, keyboards, mouses, rams, motherboards]
+
+    page = request.GET.get('page', 1)
+
+    try:
+        paginator = Paginator(list_products, 36)
+        list_products = paginator.page(page)
+    except:
+        raise Http404
+
+    context = {
+
+        'list_products': list_products
+    }
 
 
-    return render(request, 'components.html',  {
-        'processors': processors,
-        'graphics' : graphics,
-        'keyboards' : keyboards,
-        'mouses': mouses,
-        'rams': rams
-    })
+    return render(request, 'components.html', context)
 
 
 def prebuilds_view(request):
