@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'pc_store.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'project_db',
-        'USER': 'julian',
-        'PASSWORD': 'IdeaTab2005@',
+        'NAME': 'jpc_db',
+        'USER': 'felipe',
+        'PASSWORD': 'IdeaTab2005',
         'HOST': 'localhost',
         'PORT': '3306'
     }

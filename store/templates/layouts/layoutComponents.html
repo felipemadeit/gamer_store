@@ -29,7 +29,7 @@
             {% for product in queryset %}
                 <div class="component-card">
                     <a href="{% url 'product' product.id %}">
-                        <img src="{{ product.img.url }}" alt="{{product.name}}">
+                        <img src="{{ product.primary_img.url }}" alt="{{product.name}}">
                         <h2>{{product.name}}</h2>
                     </a>
                     <span id="product-price-ly">{{product.get_format_price}}</span>

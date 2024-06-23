@@ -12,55 +12,34 @@ from django.http import Http404
 def home_view (request):
 
     # SQL Query for the Processors
-    products_processor = Processor.objects.all()
+    processors= Product.objects.filter(category = 1)
 
     # SQL Query for the Graphics cards
-    products_cards = Graphics_card.objects.all()
+    cards = Product.objects.filter(category = 2)
 
     # SQL Query for the Laptops
-    products_laptops = Laptop.objects.all()
+    #products_laptops = Laptop.objects.all()
 
     # SQL Query for the Keyboards
-    products_keyboards = Keyboard.objects.all()
+    #products_keyboards = Keyboard.objects.all()
 
     
 
     return render(request, 'home.html', {
-        'processors': products_processor,
-        'cards': products_cards,
-        'laptops': products_laptops,
-        'keyboards': products_keyboards
+        'processors': processors,
+        'cards': cards,
+        #'laptops': products_laptops,
+        #'keyboards': products_keyboards
     })
 
     
 
 def components_view (request):
-
-    # SQL query for all products 
-    processors = Processor.objects.all()[:5]
-    graphics = Graphics_card.objects.all()[:5]
-    keyboards = Keyboard.objects.all()[:5]
-    mouses = Mouse.objects.all()[:5]
-    rams = Ram.objects.all()[:5]
-    motherboards = MotherBoard.objects.all()[:5]
-
-    list_products = [processors, graphics, keyboards, mouses, rams, motherboards]
-
-    page = request.GET.get('page', 1)
-
-    try:
-        paginator = Paginator(list_products, 36)
-        list_products = paginator.page(page)
-    except:
-        raise Http404
-
-    context = {
-
-        'list_products': list_products
-    }
+    print("hll")
+   
 
 
-    return render(request, 'components.html', context)
+ #   return render(request, 'components.html', context)
 
 
 def prebuilds_view(request):
@@ -123,7 +102,14 @@ def sign_out (request):
 
 def product_view(request, product_id):
 
-    product = get_object_or_404(Product, product_id=product_id)
+    product = get_object_or_404(Product, id=product_id)
+
+    print(product.name)
+    print(product.id)
+    print(product.category)
+    print(product.name)
+
+
     return render(request, 'product.html',  {
         'product': product
     })
@@ -132,7 +118,7 @@ def product_view(request, product_id):
 def processors_view(request):
 
     # SQL query for get all processors and their data
-    processors = Processor.objects.all()
+    processors = Product.objects.all()
 
     return render(request, 'processors.html', {
         'processors' : processors

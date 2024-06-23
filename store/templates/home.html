@@ -7,19 +7,19 @@
 {% endblock %}
 {% block body %}
     <div class="slogan-div">
-        <img class="slogan-img" src="{% static 'media/letras.png' %}">
+        <img class="slogan-img" src="{% static 'media/brand/letras.png' %}">
     </div>
     <div class="container-cards">
         <div class="product-card">
-            <a href="{% url 'components' %}"><img class="products-img" src="{% static 'media/compnts.png' %}"></a>            
+            <a href="{% url 'components' %}"><img class="products-img" src="{% static 'media/brand/compnts.png' %}"></a>            
         </div>
         <span class="components-span">Components</span>
         <div class="product-card">
-            <a href="{% url 'prebuilds' %}"><img class="prebuild-img" src="{% static 'media/prebuild.png' %}"></a>
+            <a href="{% url 'prebuilds' %}"><img class="prebuild-img" src="{% static 'media/brand/prebuild.png' %}"></a>
         </div>
         <span class="prebuild-span">Prebuilds</span>
         <div class="product-card">
-            <a href="{% url 'laptops' %}"><img class="laptops-img" src="{% static 'media/alp.png' %}"></a>
+            <a href="{% url 'laptops' %}"><img class="laptops-img" src="{% static 'media/brand/alp.png' %}"></a>
         </div>
         <span class="laptop-span">Laptops</span>
     </div>
@@ -48,7 +48,7 @@
                     {% for processor in processors|slice:":10" %}
                         <div class="card_product processors">        
                             <a href="{% url 'product' processor.id %}">
-                                <img src="{{ processor.img.url }}">
+                                <img src="{{ processor.primary_img.url }}">
                                 <h2>{{ processor.name }}</h2>
                                 <span class="product-price">{{ processor.get_format_price }}</span>
                             </a>
@@ -88,7 +88,7 @@
                 {% for card in cards|slice:":10" %}
                     <div class="card_product graphics">
                         <a href="{% url 'product' card.id %}">
-                            <img src="{{card.img.url}}">
+                            <img src="{{card.primary_img.url}}">
                             <h2>{{card.name}}</h2> 
                             <span class="product-price">{{card.get_format_price}}</span>
                         </a>
@@ -126,7 +126,7 @@
                 {% for laptop in laptops|slice:":10" %}
                     <div class="card_product laptops">
                         <a href="{% url 'product' laptop.id %}">
-                            <img src="{{laptop.img.url}}">
+                            <img src="{{laptop.primary_img.url}}">
                             <h2>{{laptop.name}}</h2>
                             <span class="product-price">{{laptop.get_format_price}}</span>
                         </a>
