@@ -1,0 +1,50 @@
+{% load static %}
+
+<div class="tags">
+    <h2>Categories</h2>
+    <div class="separator-tags"></div>
+        <ul>
+            <li><a href="{% url 'processors' %}">Processors</a></li>
+            <li><a href="{% url 'graphics' %}">Graphics Cards</a></li>
+            <li><a href="{% url 'ram' %}">RAM Memory</a></li>
+            <li><a href="#">MotherBoards</a></li>
+            <li><a href="#">Storage</a></li>
+            <li><a href="#">Power Supply</a></li>
+            <li><a href="#">Cases</a></li>
+            <li><a href="#">HeadPhones</a></li>
+            <li><a href="#">KeyBoards</a></li>
+            <li><a href="#">Refrigeration</a></li>
+            <li><a href="#">Monitors</a></li>
+            <li><a href="#">Gaming Chairs</a></li>
+            <li><a href="#">Accessories</a></li>
+        </ul>
+    </div>
+
+    <div class="container-filter">
+        Filter By
+    </div>
+
+    <div class="container-components-processors">
+        {% for product in products %}
+            <div class="component-card">
+                <a href="{% url 'product' product.id %}">
+                    <img src="{{ product.primary_img.url }}" alt="{{product.name}}">
+                    <h2>{{product.name}}</h2>
+                    <span id="product-price-ly">{{product.get_format_price}}</span>
+                </a>
+                <span id="span-stock-ly"> &#x2713; Stock</span>
+                <a class="add-cart" href="#">Add to cart</a>
+            </div>
+        {% endfor %}
+
+        
+    </div>
+
+    <div class="container-prev-next">
+            {% if  products.has_previous %}
+                <a href="?page={{ products.previous_page_number }}" class="btn-prev">Previous</a>
+            {% endif %}
+            {% if  products.has_next %}
+                <a href="?page={{ products.next_page_number }}" class="btn-next">Next</a>
+            {% endif %}    
+        </div>

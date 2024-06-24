@@ -5,8 +5,9 @@ from django.contrib.auth.forms import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
 from .models import *
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import Http404
+
 
 # Home view
 def home_view (request):
@@ -18,29 +19,81 @@ def home_view (request):
     cards = Product.objects.filter(category = 2)
 
     # SQL Query for the Laptops
-    #products_laptops = Laptop.objects.all()
+    laptops = Product.objects.filter(category = 5)
 
-    # SQL Query for the Keyboards
-    #products_keyboards = Keyboard.objects.all()
+    #SQL Query for the Keyboards
+    keyboards = Product.objects.filter(category = 4)
 
     
 
     return render(request, 'home.html', {
         'processors': processors,
         'cards': cards,
-        #'laptops': products_laptops,
-        #'keyboards': products_keyboards
+        'laptops': laptops,
+        'keyboards': keyboards
     })
 
     
 
 def components_view (request):
-    print("hll")
+
+    products_list = Product.objects.all()
+    paginator = Paginator(products_list, 32)
+
+    page_number = request.GET.get('page')
+
+    try:
+        products = paginator.page(page_number)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+
+    return render(request, 'components.html', {
+        'products': products
+    })
    
 
 
- #   return render(request, 'components.html', context)
+def processors_view(request):
 
+    # SQL query for get all processors and their data
+    processors_list = Product.objects.filter(category = 1)
+
+    paginator = Paginator(processors_list, 12)
+
+    page_number = request.GET.get('page')
+
+    try:
+        products = paginator.page(page_number)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+
+    return render(request, 'processors.html', {
+        'products' : products
+    })
+
+def graphics_view (request):
+
+    # SQL Query for get all graphis cards and their data
+
+    cards = Product.objects.filter(category = 2)
+
+    return render(request, 'gpu.html', {
+        'products' : cards
+    })
+
+def ram_view (request):
+
+    # SQL Query for get all ram and their data
+
+    ram = Product.objects.filter(category = 3)
+
+    return render(request, 'rams.html',  {
+        'products': ram
+    })
 
 def prebuilds_view(request):
     return render(request, 'prebuilds.html')
@@ -115,31 +168,3 @@ def product_view(request, product_id):
     })
 
 
-def processors_view(request):
-
-    # SQL query for get all processors and their data
-    processors = Product.objects.all()
-
-    return render(request, 'processors.html', {
-        'processors' : processors
-    })
-
-def graphics_view (request):
-
-    # SQL Query for get all graphis cards and their data
-
-    products = Product.objects.filter(product_category = 'Graphics card')
-
-    return render(request, 'graphics.html', {
-        'graphics' : products
-    })
-
-def ram_view (request):
-
-    # SQL Query for get all ram and their data
-
-    ram = Product.objects.filter(product_category = 'Ram')
-
-    return render(request, 'rams.html',  {
-        'ram': ram
-    })

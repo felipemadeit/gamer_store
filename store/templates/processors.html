@@ -6,38 +6,6 @@
 
 {% block body %}
 
-    <div class="tags">
-        <ul>
-            <li><a href="{% url 'processors' %}">Processors</a></li>
-            <li><a href="{% url 'graphics' %}">Graphics Cards</a></li>
-            <li><a href="{% url 'ram' %}">RAM Memory</a></li>
-            <li><a href="#">MotherBoards</a></li>
-            <li><a href="#">Storage</a></li>
-            <li><a href="#">Power Supply</a></li>
-            <li><a href="#">Cases</a></li>
-            <li><a href="#">HeadPhones</a></li>
-            <li><a href="#">KeyBoards</a></li>
-            <li><a href="#">Refrigeration</a></li>
-            <li><a href="#">Monitors</a></li>
-            <li><a href="#">Gaming Chairs</a></li>
-            <li><a href="#">Accessories</a></li>
-        </ul>
-    </div>
-
-    <div class="container-filter">
-        Filter By
-    </div>
-
-    <div class="container-components">
-        {% for processor in processors %}
-            <div class="component-card">
-                <a href="{% url 'product' processor.product_id %}">
-                    <img src="{{ processor.processor_img.url }}" alt="{{product.processor_name}}">
-                    <h2>{{processor.processor_name}}</h2>
-                </a>
-                <span>{{processor.get_format_price}}</span>
-            </div>
-        {% endfor %}
-    </div>
+    {% include 'layouts/layoutComponentsProcessors.html' %}
     
 {% endblock %}

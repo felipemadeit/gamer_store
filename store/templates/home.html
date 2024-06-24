@@ -157,7 +157,7 @@
                 {% for keyboard in keyboards|slice:":10" %}
                     <div class="card_product keyboards">
                         <a href="{% url 'product' keyboard.id %}">
-                            <img src="{{keyboard.img.url}}">
+                            <img src="{{keyboard.primary_img.url}}">
                             <h2>{{keyboard.name}}</h2>
                             <span class="product-price">{{keyboard.get_format_price}}</span>
                         </a> 

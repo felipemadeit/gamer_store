@@ -15,7 +15,7 @@ urlpatterns = [
     path('log_out', views.sign_out, name='logout'),
     path('product/<int:product_id>/', views.product_view, name='product'),
     path('processors', views.processors_view, name='processors'),
-    path('graphics_cards', views.graphics_view, name='graphics'),
+    path('gpu', views.graphics_view, name='graphics'),
     path('ram', views.ram_view, name='ram')
 
 
