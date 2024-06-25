@@ -7,6 +7,8 @@ from django.db import IntegrityError
 from .models import *
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import Http404
+from django.db.models.functions import Random
+
 
 
 # Home view
@@ -178,7 +180,7 @@ def case_view (request):
 
 def headphones_view (request):
 
-    # SQL Query for get all SDD, M.2 ant their data
+    # SQL Query for get all headphones and their data
     headphone_list = Product.objects.filter(category = 10)
 
     paginator = Paginator(headphone_list,12)
@@ -197,6 +199,62 @@ def headphones_view (request):
     })
 
 
+def keyboard_view (request):
+
+    keyboard_list = Product.objects.filter(category = 4)
+
+    paginator = Paginator(keyboard_list,12)
+
+    page_number = request.GET.get('page')
+
+    try:
+        products = paginator.page(page_number)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+
+    return render(request, 'keyboard.html', {
+        'products': products
+    })
+
+def refrigeration_view (request):
+
+    refrigeration_list = Product.objects.filter(category = 11)
+
+    paginator = Paginator(refrigeration_list,12)
+
+    page_number = request.GET.get('page')
+
+    try:
+        products = paginator.page(page_number)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+
+    return render(request, 'refrigeration.html', {
+        'products': products
+    })
+
+def monitor_view(request):
+
+    monitor_list = Product.objects.filter(category = 12)
+
+    paginator = Paginator(monitor_list,12)
+
+    page_number = request.GET.get('page')
+
+    try:
+        products = paginator.page(page_number)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+
+    return render(request, 'monitor.html', {
+        'products': products
+    })
 
 def prebuilds_view(request):
     return render(request, 'prebuilds.html')

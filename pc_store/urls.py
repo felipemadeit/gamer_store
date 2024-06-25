@@ -21,7 +21,10 @@ urlpatterns = [
     path('storage', views.storage_view, name='storage'),
     path('power_supply', views.power_view, name='power'),
     path('cases', views.case_view, name='case'),
-    path('headphones', views.headphones_view, name='headphones')
+    path('headphones', views.headphones_view, name='headphones'),
+    path('keyboards', views.keyboard_view, name='keyboards'),
+    path('refrigeration', views.refrigeration_view, name='refrigeration'),
+    path('monitors', views.monitor_view, name='monitor')
 
 
 ]

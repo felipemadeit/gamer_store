@@ -15,7 +15,7 @@
             <li><a href="{% url 'keyboards' %}">KeyBoards</a></li>
             <li><a href="{% url 'refrigeration' %}">Refrigeration</a></li>
             <li><a href="{% url 'monitor' %}">Monitors</a></li>
-            <li><a href="#">Gaming Chairs</a></li>
+            <li><a href="">Gaming Chairs</a></li>
             <li><a href="#">Accessories</a></li>
         </ul>
     </div>
@@ -24,7 +24,7 @@
         Filter By
     </div>
 
-    <div class="container-components-cards">
+    <div class="container-components-case">
         {% for product in products %}
             <div class="component-card">
                 <a href="{% url 'product' product.id %}">
