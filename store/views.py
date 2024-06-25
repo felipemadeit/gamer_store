@@ -176,6 +176,26 @@ def case_view (request):
         'products': products
     })
 
+def headphones_view (request):
+
+    # SQL Query for get all SDD, M.2 ant their data
+    headphone_list = Product.objects.filter(category = 10)
+
+    paginator = Paginator(headphone_list,12)
+
+    page_number = request.GET.get('page')
+
+    try:
+        products = paginator.page(page_number)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+
+    return render(request, 'headphones.html', {
+        'products': products
+    })
+
 
 
 def prebuilds_view(request):

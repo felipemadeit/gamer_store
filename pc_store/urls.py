@@ -20,7 +20,8 @@ urlpatterns = [
     path('motherboards', views.motherboards_view, name='motherboards'),
     path('storage', views.storage_view, name='storage'),
     path('power_supply', views.power_view, name='power'),
-    path('cases', views.case_view, name='case')
+    path('cases', views.case_view, name='case'),
+    path('headphones', views.headphones_view, name='headphones')
 
 
 ]
