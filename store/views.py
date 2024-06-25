@@ -50,7 +50,8 @@ def components_view (request):
         products = paginator.page(paginator.num_pages)
 
     return render(request, 'components.html', {
-        'products': products
+        'products': products,
+        'current_page': page_number
     })
    
 
@@ -94,6 +95,88 @@ def ram_view (request):
     return render(request, 'rams.html',  {
         'products': ram
     })
+
+def motherboards_view (request):
+
+    # SQL Query for get all motherboards ant their data
+    motherboard_list = Product.objects.filter(category = 6)
+
+    paginator = Paginator(motherboard_list,12)
+
+    page_number = request.GET.get('page')
+
+    try:
+        products = paginator.page(page_number)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+
+    return render(request, 'motherboards.html', {
+        'products': products
+    })
+
+def storage_view (request):
+    
+    # SQL Query for get all SDD, M.2 ant their data
+    storage_list = Product.objects.filter(category = 7)
+
+    paginator = Paginator(storage_list,12)
+
+    page_number = request.GET.get('page')
+
+    try:
+        products = paginator.page(page_number)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+
+    return render(request, 'storage.html', {
+        'products': products
+    })
+
+def power_view (request):
+
+    # SQL Query for get all SDD, M.2 ant their data
+    power_list = Product.objects.filter(category = 8)
+
+    paginator = Paginator(power_list,12)
+
+    page_number = request.GET.get('page')
+
+    try:
+        products = paginator.page(page_number)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+
+    return render(request, 'power.html', {
+        'products': products
+    })
+
+def case_view (request):
+
+    # SQL Query for get all SDD, M.2 ant their data
+    case_list = Product.objects.filter(category = 9)
+
+    paginator = Paginator(case_list,12)
+
+    page_number = request.GET.get('page')
+
+    try:
+        products = paginator.page(page_number)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+
+    return render(request, 'case.html', {
+        'products': products
+    })
+
+
 
 def prebuilds_view(request):
     return render(request, 'prebuilds.html')

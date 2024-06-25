@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+
+    
 // Selectores para el carrusel de procesadores
 const prevButtonProcessors = document.querySelector(".show_products.processors .arrow-prev");
 const nextButtonProcessors = document.querySelector(".show_products.processors .arrow-next");
@@ -24,7 +26,6 @@ nextButtonProcessors.addEventListener("click", function() {
 });
 
 cardsContainerProcessors.addEventListener("mousedown", function(e)  {
-    console.log("baj")
     isDown = true;
     startX = e.pageX - cardsContainerProcessors.offsetLeft;
     scrollLeft = cardsContainerProcessors.scrollLeft;
@@ -106,7 +107,14 @@ nextButtonKeyboards.addEventListener("click", function() {
         left: 247,
         behavior: "smooth"
     });
-});
+    }
+
+
+);
+
+
+
+
 
 
 

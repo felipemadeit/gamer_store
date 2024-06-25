@@ -16,7 +16,11 @@ urlpatterns = [
     path('product/<int:product_id>/', views.product_view, name='product'),
     path('processors', views.processors_view, name='processors'),
     path('gpu', views.graphics_view, name='graphics'),
-    path('ram', views.ram_view, name='ram')
+    path('ram', views.ram_view, name='ram'),
+    path('motherboards', views.motherboards_view, name='motherboards'),
+    path('storage', views.storage_view, name='storage'),
+    path('power_supply', views.power_view, name='power'),
+    path('cases', views.case_view, name='case')
 
 
 ]
