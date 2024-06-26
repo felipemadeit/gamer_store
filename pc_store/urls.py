@@ -24,7 +24,8 @@ urlpatterns = [
     path('headphones', views.headphones_view, name='headphones'),
     path('keyboards', views.keyboard_view, name='keyboards'),
     path('refrigeration', views.refrigeration_view, name='refrigeration'),
-    path('monitors', views.monitor_view, name='monitor')
+    path('monitors', views.monitor_view, name='monitor'),
+    path('chairs', views.chair_view, name='chair')
 
 
 ]

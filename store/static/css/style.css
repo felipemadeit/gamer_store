@@ -1070,6 +1070,16 @@ input[type="password"] {
     height: 1200px;
 }
 
+.container-components-chairs {
+    display: grid;
+    grid-template-columns: repeat(4, 4fr);
+    padding: 20px;
+    margin-top: 120px;
+    margin-left: 235px;
+    width: 1050px;
+    height: 1200px;
+}
+
 .add-cart {
     display: block;
     position: absolute;
