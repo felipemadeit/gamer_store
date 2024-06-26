@@ -40,6 +40,15 @@ def home_view (request):
 def components_view (request):
 
     products_list = Product.objects.all()
+    
+    order_by = request.GET.get('order', '')
+    
+    if order_by == 'higher-price':
+        products_list = products_list.order_by('-price')
+    elif order_by == 'lower-price':
+        products_list = products_list.order_by('price')
+    
+    
     paginator = Paginator(products_list, 32)
 
     page_number = request.GET.get('page')
@@ -53,7 +62,8 @@ def components_view (request):
 
     return render(request, 'components.html', {
         'products': products,
-        'current_page': page_number
+        'current_page': page_number,
+        'order': order_by
     })
    
 
@@ -62,6 +72,13 @@ def processors_view(request):
 
     # SQL query for get all processors and their data
     processors_list = Product.objects.filter(category = 1)
+    
+    order_by = request.GET.get('order', '')
+    
+    if order_by == 'higher-price':
+        processors_list = processors_list.order_by('-price')
+    elif order_by == 'lower-price':
+        processors_list = processors_list.order_by('price')
 
     paginator = Paginator(processors_list, 12)
 
@@ -75,7 +92,10 @@ def processors_view(request):
         products = paginator.page(paginator.num_pages)
 
     return render(request, 'processors.html', {
-        'products' : products
+        'products' : products,
+        'current_page': page_number,
+        'order': order_by
+        
     })
 
 def graphics_view (request):
@@ -83,6 +103,13 @@ def graphics_view (request):
     # SQL Query for get all graphis cards and their data
 
     cards = Product.objects.filter(category = 2)
+    
+    order_by = request.GET.get('order', '')
+    
+    if order_by == 'higher-price':
+        cards = cards.order_by('-price')
+    elif order_by == 'lower-price':
+        cards = cards.order_by('price')
 
     return render(request, 'gpu.html', {
         'products' : cards
@@ -93,6 +120,13 @@ def ram_view (request):
     # SQL Query for get all ram and their data
 
     ram = Product.objects.filter(category = 3)
+    
+    order_by = request.GET.get('order', '')
+    
+    if order_by == 'higher-price':
+        ram = ram.order_by('-price')
+    elif order_by == 'lower-price':
+        ram = ram.order_by('price')
 
     return render(request, 'rams.html',  {
         'products': ram
@@ -102,6 +136,13 @@ def motherboards_view (request):
 
     # SQL Query for get all motherboards ant their data
     motherboard_list = Product.objects.filter(category = 6)
+    
+    order_by = request.GET.get('order', '')
+    
+    if order_by == 'higher-price':
+        motherboard_list = motherboard_list.order_by('-price')
+    elif order_by == 'lower-price':
+        motherboard_list = motherboard_list.order_by('price')
 
     paginator = Paginator(motherboard_list,12)
 
@@ -115,13 +156,22 @@ def motherboards_view (request):
         products = paginator.page(paginator.num_pages)
 
     return render(request, 'motherboards.html', {
-        'products': products
+        'products': products,
+        'current_page': page_number,
+        'order': order_by
     })
 
 def storage_view (request):
     
     # SQL Query for get all SDD, M.2 ant their data
     storage_list = Product.objects.filter(category = 7)
+    
+    order_by = request.GET.get('order', '')
+    
+    if order_by == 'higher-price':
+        storage_list = storage_list.order_by('-price')
+    elif order_by == 'lower-price':
+        storage_list = storage_list.order_by('price')
 
     paginator = Paginator(storage_list,12)
 
@@ -135,13 +185,22 @@ def storage_view (request):
         products = paginator.page(paginator.num_pages)
 
     return render(request, 'storage.html', {
-        'products': products
+        'products': products,
+        'current_page': page_number,
+        'order': order_by
     })
 
 def power_view (request):
 
     # SQL Query for get all SDD, M.2 ant their data
     power_list = Product.objects.filter(category = 8)
+    
+    order_by = request.GET.get('order', '')
+    
+    if order_by == 'higher-price':
+        power_list = power_list.order_by('-price')
+    elif order_by == 'lower-price':
+        power_list = power_list.order_by('price')
 
     paginator = Paginator(power_list,12)
 
@@ -155,13 +214,22 @@ def power_view (request):
         products = paginator.page(paginator.num_pages)
 
     return render(request, 'power.html', {
-        'products': products
+        'products': products,
+        'current_page': page_number,
+        'order': order_by
     })
 
 def case_view (request):
 
     # SQL Query for get all SDD, M.2 ant their data
     case_list = Product.objects.filter(category = 9)
+    
+    order_by = request.GET.get('order', '')
+    
+    if order_by == 'higher-price':
+        case_list= case_list.order_by('-price')
+    elif order_by == 'lower-price':
+        case_list = case_list.order_by('price')
 
     paginator = Paginator(case_list,12)
 
@@ -175,13 +243,22 @@ def case_view (request):
         products = paginator.page(paginator.num_pages)
 
     return render(request, 'case.html', {
-        'products': products
+        'products': products,
+        'current_page': page_number,
+        'order': order_by
     })
 
 def headphones_view (request):
 
     # SQL Query for get all headphones and their data
     headphone_list = Product.objects.filter(category = 10)
+    
+    order_by = request.GET.get('order', '')
+    
+    if order_by == 'higher-price':
+        headphone_list = headphone_list.order_by('-price')
+    elif order_by == 'lower-price':
+        headphone_list = headphone_list.order_by('price')
 
     paginator = Paginator(headphone_list,12)
 
@@ -195,13 +272,22 @@ def headphones_view (request):
         products = paginator.page(paginator.num_pages)
 
     return render(request, 'headphones.html', {
-        'products': products
+        'products': products,
+        'current_page': page_number,
+        'order': order_by
     })
 
 
 def keyboard_view (request):
 
     keyboard_list = Product.objects.filter(category = 4)
+    
+    order_by = request.GET.get('order', '')
+    
+    if order_by == 'higher-price':
+        keyboard_list = keyboard_list.order_by('-price')
+    elif order_by == 'lower-price':
+        keyboard_list = keyboard_list.order_by('price')
 
     paginator = Paginator(keyboard_list,12)
 
@@ -215,12 +301,21 @@ def keyboard_view (request):
         products = paginator.page(paginator.num_pages)
 
     return render(request, 'keyboard.html', {
-        'products': products
+        'products': products,
+        'current_page': page_number,
+        'order': order_by
     })
 
 def refrigeration_view (request):
 
     refrigeration_list = Product.objects.filter(category = 11)
+    
+    order_by = request.GET.get('order', '')
+    
+    if order_by == 'higher-price':
+        refrigeration_list = refrigeration_list.order_by('-price')
+    elif order_by == 'lower-price':
+        refrigeration_list = refrigeration_list.order_by('price')
 
     paginator = Paginator(refrigeration_list,12)
 
@@ -234,12 +329,21 @@ def refrigeration_view (request):
         products = paginator.page(paginator.num_pages)
 
     return render(request, 'refrigeration.html', {
-        'products': products
+        'products': products,
+        'current_page': page_number,
+        'order': order_by
     })
 
 def monitor_view(request):
 
     monitor_list = Product.objects.filter(category = 12)
+    
+    order_by = request.GET.get('order', '')
+    
+    if order_by == 'higher-price':
+        monitor_list = monitor_list.order_by('-price')
+    elif order_by == 'lower-price':
+        monitor_list = monitor_list.order_by('price')
 
     paginator = Paginator(monitor_list,12)
 
@@ -253,12 +357,21 @@ def monitor_view(request):
         products = paginator.page(paginator.num_pages)
 
     return render(request, 'monitor.html', {
-        'products': products
+        'products': products,
+        'current_page': page_number,
+        'order': order_by
     })
 
 def chair_view (request):
     
     chair_list = Product.objects.filter(category = 13)
+    
+    order_by = request.GET.get('order', '')
+    
+    if order_by == 'higher-price':
+        chair_list = chair_list.order_by('-price')
+    elif order_by == 'lower-price':
+        chair_list = chair_list.order_by('price')
 
     paginator = Paginator(chair_list,12)
 
@@ -272,12 +385,21 @@ def chair_view (request):
         products = paginator.page(paginator.num_pages)
 
     return render(request, 'chairs.html', {
-        'products': products
+        'products': products,
+        'current_page': page_number,
+        'order': order_by
     })
 
 def accesory_view (request):
 
     accesory_list = Product.objects.filter(category = 14)
+    
+    order_by = request.GET.get('order', '')
+    
+    if order_by == 'higher-price':
+        accesory_list = accesory_list.order_by('-price')
+    elif order_by == 'lower-price':
+        accesory_list = accesory_list.order_by('price')
 
     paginator = Paginator(accesory_list,8)
 
@@ -291,7 +413,9 @@ def accesory_view (request):
         products = paginator.page(paginator.num_pages)
 
     return render(request, 'accessories.html', {
-        'products': products
+        'products': products,
+        'current_page': page_number,
+        'order': order_by
     })
 
 def prebuilds_view(request):

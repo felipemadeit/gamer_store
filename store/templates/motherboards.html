@@ -1,5 +1,7 @@
 {% extends 'index.html' %}
 
+{% load static %}
+
 {% block title %}
     MotherBoards
 {% endblock %}
@@ -8,4 +10,7 @@
 
     {% include 'layouts/layoutComponentsMotherboard.html' %}
 
+{% endblock %}
+{% block script %}
+    <script src="{% static 'scripts/toggleFunction.js' %}"></script>
 {% endblock %}

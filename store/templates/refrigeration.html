@@ -1,5 +1,7 @@
 {% extends 'index.html' %}
 
+
+
 {% load static %}
 
 {% block title %}
@@ -8,4 +10,8 @@
 
 {% block body %}
     {% include 'layouts/layoutComponentsRefrigeration.html' %}
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'scripts/toggleFunction.js' %}"></script>
 {% endblock %}

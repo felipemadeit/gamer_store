@@ -21,7 +21,9 @@
     </div>
 
     <div class="container-filter">
-        Filter By
+        <div class="btn-toggle" onclick="toggleItems()">Sorted By</div>
+        <a href="?order=higher-price" class="order-by higher-price {% if order == 'higher-price' %}active{% endif %}">High to Low</a>
+        <a href="?order=lower-price"class="order-by lower-price {% if order == 'lower-price' %}active{% endif %}">Low to High</a>      
     </div>
 
     <div class="container-components-case">

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from store import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -10,7 +10,7 @@ urlpatterns = [
     path('components', views.components_view, name='components'),
     path('prebuilds', views.prebuilds_view, name='prebuilds'),
     path('laptops', views.laptops_view, name='laptops'),
-    path('login', views.login_view, name='login'),
+    path('login',include('allauth.urls')),
     path('sign_up', views.sign_up_view, name='sign_up'),
     path('log_out', views.sign_out, name='logout'),
     path('product/<int:product_id>/', views.product_view, name='product'),

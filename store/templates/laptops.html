@@ -1,5 +1,11 @@
 {% extends 'index.html' %}
+{% load static %}
 
 {% block title %}
     Laptops
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'scripts/toggleFunction.js' %}"></script>
 {% endblock %}
