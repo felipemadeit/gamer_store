@@ -390,6 +390,7 @@ def chair_view (request):
         'order': order_by
     })
 
+
 def accesory_view (request):
 
     accesory_list = Product.objects.filter(category = 14)
