@@ -275,6 +275,24 @@ def chair_view (request):
         'products': products
     })
 
+def accesory_view (request):
+
+    accesory_list = Product.objects.filter(category = 14)
+
+    paginator = Paginator(accesory_list,8)
+
+    page_number = request.GET.get('page')
+
+    try:
+        products = paginator.page(page_number)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+
+    return render(request, 'accessories.html', {
+        'products': products
+    })
 
 def prebuilds_view(request):
     return render(request, 'prebuilds.html')
